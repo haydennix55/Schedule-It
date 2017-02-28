@@ -42,3 +42,7 @@ The group as a whole has light experience in every aspect, so we will use the gr
 
 ####Project Tracking: Github (projects link: https://github.com/haydennix55/chrome-extension/projects/1)
 Using GitHub Project Functionality, see Projects tab above.
+
+###Screenshots
+Login Page:
+[![login-page-screenshot.jpg](https://s23.postimg.org/6cwey2j6z/login_page_screenshot.jpg)](https://postimg.org/image/72f7afjqf/)
