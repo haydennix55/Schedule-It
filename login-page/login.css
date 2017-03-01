@@ -1,0 +1,52 @@
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #CC0000;
+    color: white;
+    font-size: 20px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 8px 18px;
+    background-color: #f44336;
+}
+.container {
+    background-color: #f1f1f1;
+}
+
+.logo {
+    text-align: center;
+}
+
+.fields {
+    padding: 16px;
+}
+.submitButton{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.logo-header {
+    width: 200px;
+}
+.forgotPass {
+    float: right;
+    padding-top: 18px;
+}
