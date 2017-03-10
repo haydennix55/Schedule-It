@@ -16,13 +16,14 @@
             <input type="password" placeholder="Enter Password" name="pass" required>
 
             <!--This can be changed to a type="submit", but it exposes password in URL-->
-            <button type="button" on-click="checkLogin(username,pass)">Login</button>
+            <button type="button" onclick="queryUser(username.value, pass.value);">Login</button>
         </div>
 
         <!--Contains reset button and forgot pass button in aesthetic border-->
         <div class="container">
             <button type="reset" class="cancelbtn">Cancel</button>
-            <span class="forgotPass"><a href="#">Forgot password?</a></span>
+            <a class="linkButton" href="#">New? Create Account</a>
+            <span class="linkButton"><a href="#">Forgot password?</a></span>
         </div>
     </form>
 
