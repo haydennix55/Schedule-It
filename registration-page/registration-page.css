@@ -1,0 +1,29 @@
+.logo-header {
+    width: 200px;
+}
+.fields {
+    padding: 16px;
+    float: left;
+}
+.registerButton{
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #CC0000;
+    color: white;
+    font-size: 20px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 400px;
+}
+.field{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 400px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: auto;
+}
