@@ -7,10 +7,7 @@
 
 	$conn = new mysqli($server, $username, $password, DBNAME);
 
-	if(!$conn){
-		die("connection failed : " . mysql_error());
-	}
-	else{
-		echo "Worked";
+	if(mysql_ping($conn) == FALSE){
+		echo "Connection did not work";
 	}
 ?>
