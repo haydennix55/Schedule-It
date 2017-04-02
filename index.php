@@ -1,5 +1,7 @@
 <?php
-
+  ob_start();
+  session_start();
+  require_once 'connectDB.php';
 ?>
 
 <!DOCTYPE html>
