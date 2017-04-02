@@ -10,4 +10,7 @@
 	if(!$conn){
 		die("connection failed : " . mysql_error());
 	}
+	else{
+		echo "Worked";
+	}
 ?>
