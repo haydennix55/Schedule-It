@@ -6,8 +6,6 @@
 
     $error = false;
 
-    if()
-
 ?>
 <!DOCTYPE html>
 <html>
