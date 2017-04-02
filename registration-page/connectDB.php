@@ -7,6 +7,5 @@
 	$db = substr($url["path"], 1);
 
 	$conn = new mysqli($server, $username, $password, $db);
- 	$dbcon = mysql_select_db(DBNAME);
 
 ?>
