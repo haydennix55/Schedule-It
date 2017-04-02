@@ -6,6 +6,7 @@
 
     $error = false;
 
+    if()
 
 ?>
 <!DOCTYPE html>
@@ -43,3 +44,4 @@
     </form>
 </body>
 </html>
+<?php ob_end_flush(); ?>
