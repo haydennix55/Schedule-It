@@ -8,4 +8,7 @@
 
 	$conn = new mysqli($server, $username, $password, $db);
 
+	if(!$conn){
+		die("connection failed : " . mysql_error());
+	}
 ?>
