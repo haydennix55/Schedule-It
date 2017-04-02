@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+    ob_start();
+    session_start();
+
+    include_once 'connectDB.php';
+
+    $error = false;
+
+    
+?>
 <html>
 <link rel="stylesheet" type="text/css" href="registration-page.css" media="screen" />
 <script type="text/javascript" src="registration-page.js"></script>
