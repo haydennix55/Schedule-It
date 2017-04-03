@@ -13,6 +13,8 @@
 		$password_2 = password_hash(mysqli_real_escape_string($conn, $_POST['rePassword']), PASSWORD_DEFAULT);
 
 		//check to make sure the passwords match
+		// this could be altered to use password verify as well instead of just comparing the two hashed passwords.
+		// it might need to be changed
 		if($password_1 == $password_2){
 			$sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
 
