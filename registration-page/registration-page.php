@@ -15,7 +15,7 @@
 <body>
     <a href="../index.html"><img class="logo-header" src="logo.jpeg" alt="Logo"></a>
 
-    <form>
+    <form method="post" action="registration-complete.php">
         <div class="fields">
             <label>First Name</label></br>
             <input class="field" type="text" placeholder="Enter your first name" name="first" required maxlength="40"></br>
@@ -35,7 +35,7 @@
             <label>Re-Enter Password</label></br>
             <input class="field" type="password" placeholder="Re-enter your password" name="rePassword" required maxlength="40"></br>
 
-            <button class="registerButton" type="button" onClick="queryNewUser(email,username,password,rePassword)">Create Account</button></br>
+            <input type="submit" name="submit" value="submit"></br>
             <button class="cancelButton" type="reset">Cancel</button>
 
         </div>
