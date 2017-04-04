@@ -25,14 +25,14 @@
 			echo $last_name;
 			echo $email;
 			echo $username;
-			$sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
+			/*$sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
 
 			if(mysqli_query($conn, $sql)) {
 				echo "You successfully registered";
 			}
 			else {
 				echo "Error: Not able to execute $sql. " . mysqli_error($conn);
-			}
+			}*/
 		}
 		else{
 			echo "The two passwords you typed did not match";
