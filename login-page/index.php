@@ -25,7 +25,7 @@
             <input type="password" placeholder="Enter Password" name="pass" required>
 
             <!--This can be changed to a type="submit", but it exposes password in URL-->
-            <input type="button" name="login" value="submit" class="button">
+            <input type="submit" name="login" value="submit" class="button">
         </div>
 			</form>
 
@@ -35,7 +35,7 @@
             <a class="linkButton" href="http://schedule-it.herokuapp.com/registration-page/registration-page.php">New? Create Account</a>
             <span class="linkButton"><a href="#">Forgot password?</a></span>
         </div>
-    
+
 
 
 
