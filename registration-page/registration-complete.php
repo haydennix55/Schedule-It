@@ -13,7 +13,7 @@
 		$password_2 = mysqli_real_escape_string($conn, $_POST['rePassword']);
 
 		echo "hello";
-		echo $first_name;
+		echo '$first_name';
 		echo $last_name;
 		echo $email;
 		echo $username;
