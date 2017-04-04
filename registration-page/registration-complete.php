@@ -6,11 +6,11 @@
 
 		// Saves the input from the registration page to variables, it also parses out any strange characters to prevent injection
 		$first_name = $_POST['first'];
-		$last_name = mysqli_real_escape_string($conn, $_POST['last']);
-		$email = mysqli_real_escape_string($conn, $_POST['email']);
-		$username = mysqli_real_escape_string($conn, $_POST['username']);
-		$password_1 = password_hash(mysqli_real_escape_string($conn, $_POST['password']), PASSWORD_DEFAULT);
-		$password_2 = mysqli_real_escape_string($conn, $_POST['rePassword']);
+		$last_name = mysql_real_escape_string($conn, $_POST['last']);
+		$email = mysql_real_escape_string($conn, $_POST['email']);
+		$username = mysql_real_escape_string($conn, $_POST['username']);
+		$password_1 = password_hash(mysql_real_escape_string($conn, $_POST['password']), PASSWORD_DEFAULT);
+		$password_2 = mysql_real_escape_string($conn, $_POST['rePassword']);
 
 		echo "hello";
 		echo $first_name;
