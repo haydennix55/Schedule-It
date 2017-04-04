@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Does this work?
+
+  table
+    tr
+      th ID
+      th Name
+      th Quantity
+      th Price
+
+    each val in mysql
+      tr
+        td #{val.id}
+        td #{val.name}
+        td #{val.qty}
+        td #{val.price}
+        td
+          a(href="/delete/" + val.id) DELETE
+
+  h2= "Create item"
+  form(name="postform", method="post")
+    input(type="text", placeholder="name", name="name")
+    input(type="number", placeholder="qty", name="qty")
+    input(type="float", placeholder="price", name="price")
+    input(type="submit", value="Submit")
+
+  h2= "Update item"
+  form(name="putform", action="/update", method="put")
+    input(type="number", placeholder="id", name="id")
+    input(type="text", placeholder="name", name="name")
+    input(type="number", placeholder="qty", name="qty")
+    input(type="float", placeholder="price", name="price")
+    input(type="submit", value="Submit")
