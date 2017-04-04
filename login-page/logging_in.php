@@ -15,7 +15,11 @@
 
 		$query = mysqli_query($conn, $sql);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		echo mysqli_fetch_assoc($query);
+=======
+
+>>>>>>> a2b25694015036d665a35940a75cb4e5eea3369a
 =======
 
 >>>>>>> a2b25694015036d665a35940a75cb4e5eea3369a
