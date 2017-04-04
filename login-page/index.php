@@ -25,7 +25,7 @@
             <input type="password" placeholder="Enter Password" name="pass" required>
 
             <!--This can be changed to a type="submit", but it exposes password in URL-->
-            <input type="submit" name="login" value="submit" class="button">
+            <input type="submit" name="submit" value="submit" class="button">
         </div>
 			</form>
 
