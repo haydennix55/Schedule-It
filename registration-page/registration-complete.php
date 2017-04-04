@@ -12,10 +12,19 @@
 		$password_1 = password_hash(mysqli_real_escape_string($conn, $_POST['password']), PASSWORD_DEFAULT);
 		$password_2 = mysqli_real_escape_string($conn, $_POST['rePassword']);
 
+		echo $first_name;
+		echo $last_name;
+		echo $email;
+		echo $username;
+
 		//check to make sure the passwords match
 		// this could be altered to use password verify as well instead of just comparing the two hashed passwords.
 		// it might need to be changed
 		if(password_verify($password_2, $password_1)){
+			echo $first_name;
+			echo $last_name;
+			echo $email;
+			echo $username;
 			$sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
 
 			if(mysqli_query($conn, $sql)) {
