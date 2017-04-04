@@ -7,7 +7,7 @@
     <a href="http://schedule-it.herokuapp.com/"><img class="logo-header" src="logo.jpeg" alt="Logo"></a>
 
     <!-- This form is the information required for login -->
-    <form>
+    <form method="post" action="logging_in.php">
         <div class="fields">
             <label>Username:</label>
             <input type="text" placeholder="Enter Username" name="username" required>
@@ -16,7 +16,7 @@
             <input type="password" placeholder="Enter Password" name="pass" required>
 
             <!--This can be changed to a type="submit", but it exposes password in URL-->
-            <button type="button" onclick="queryUser(username.value, pass.value);">Login</button>
+            <button type="button" name="submit" value="submit">Login</button>
         </div>
 
         <!--Contains reset button and forgot pass button in aesthetic border-->

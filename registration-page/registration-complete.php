@@ -16,6 +16,9 @@
 		//check to make sure the passwords match
 		// this could be altered to use password verify as well instead of just comparing the two hashed passwords.
 		// it might need to be changed
+
+		// Check to make sure the username isn't already being used
+
 		if(password_verify($password_2, $password_1)){
 			$sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
 
