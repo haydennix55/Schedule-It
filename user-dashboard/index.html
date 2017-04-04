@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <Title>Schedule-It</Title>
+  <link rel="stylesheet" href="user-dashboard.css" type="text/css" />
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Calander</a>
+  <a href="#">Find Groups</a>
+  <a href="#">Create A Croup</a>
+  <a href="#">Settings</a>
+</div>
+
+<span onclick="openNav()"><img src="https://openclipart.org/download/221605/menu-icon.svg" width=30/></span>
+
+<div id="main">
+  <div id="logo">
+    <h1><img class="logo-header" src="logo.jpeg" alt="Logo"</h1>
+  </div>
+</div>
+</div>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+</body>
+</html>
