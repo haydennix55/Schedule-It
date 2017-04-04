@@ -12,6 +12,7 @@
 		$password_1 = password_hash(mysqli_real_escape_string($conn, $_POST['password']), PASSWORD_DEFAULT);
 		$password_2 = mysqli_real_escape_string($conn, $_POST['rePassword']);
 
+		echo "hello";
 		echo $first_name;
 		echo $last_name;
 		echo $email;
