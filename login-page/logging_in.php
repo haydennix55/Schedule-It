@@ -14,7 +14,11 @@
 		$sql = "SELECT uid, first_name, last_name, email, username, password FROM users";
 
 		$query = mysqli_query($conn, $sql);
+<<<<<<< HEAD
 		echo mysqli_fetch_assoc($query);
+=======
+
+>>>>>>> a2b25694015036d665a35940a75cb4e5eea3369a
 		while ($row = mysqli_fetch_assoc($query)){
 			echo "checking the database";
 			if($username == $row['username'] and password_verify($password, $row['password'])){
