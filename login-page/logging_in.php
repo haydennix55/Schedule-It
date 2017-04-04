@@ -15,10 +15,10 @@
 
 		echo $sql;
 
-		$query = mysqli_query($conn, $sql);
+		//$query = mysqli_query($conn, $sql);
 		echo $query;
 
-		while ($row = mysqli_fetch_assoc($query)){
+		while ($row = mysqli_fetch_assoc(mysqli_query($conn, $sql))){
 			echo "checking the database";
 			if($username == $row['username'] and password_verify($password, $row['password'])){
 
