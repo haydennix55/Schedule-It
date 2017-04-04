@@ -2,7 +2,7 @@
 	session_start();
 
 	if(isset($_POST['submit'])) {
-		inlcude_once '../include/connectDB.php';
+		include_once '../include/connectDB.php';
 
 		//pulls the log in information to check with database
 		$username = mysqli_real_escape_string($conn, $_POST['username']);

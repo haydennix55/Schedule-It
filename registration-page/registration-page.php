@@ -2,7 +2,7 @@
     ob_start();
     session_start();
 
-    include_once '/include/connectDB.php';
+    include_once '../include/connectDB.php';
 
     $error = false;
 

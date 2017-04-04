@@ -1,3 +1,12 @@
+<?php
+	ob_start();
+	session_start();
+
+	include_once '../include/connectDB.php';
+
+	$error = false
+ ?>
+
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="login.css" media="screen" />
