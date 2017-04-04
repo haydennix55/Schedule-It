@@ -4,6 +4,8 @@
 	if(isset($_POST['submit'])) {
 		include_once '../include/connectDB.php';
 
+		echo "submit was clicked";
+
 		//pulls the log in information to check with database
 		$username = mysqli_real_escape_string($conn, $_POST['username']);
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -13,7 +15,10 @@
 		$query = mysqli_query($conn, $sql);
 
 		while ($row = mysqli_fetch_assoc($query)){
+			echo "checking the database";
 			if($username == $row['username'] and password_verify($password, $row['password'])){
+
+				echo "confirming log in info"
 				$user = $row;
 				$login = 1;
 				$_SESSION['login'] = 1;
