@@ -13,9 +13,10 @@
 		$username = mysqli_real_escape_string($conn, $_POST['username']);
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
 
-		$sql = "SELECT uid, first_name, last_name, email, username, password FROM users where username = $username";
+		$sql = "SELECT uid, first_name, last_name, email, username, password FROM users";
 
 		$query = mysqli_query($conn, $sql);
+		echo $query;
 
 		while ($row = mysqli_fetch_assoc($query)){
 			echo "checking the database";
