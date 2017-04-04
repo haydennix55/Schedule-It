@@ -1,3 +1,4 @@
+
 <?php
 	session_start();
 
@@ -20,7 +21,7 @@
 			echo "checking the database";
 			if($username == $row['username'] and password_verify($password, $row['password'])){
 
-				echo "confirming log in info"
+				echo "confirming log in info";
 				$user = $row;
 				$login = 1;
 				$_SESSION['login'] = 1;
