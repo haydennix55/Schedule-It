@@ -2,8 +2,6 @@
 <?php
 	session_start();
 
-	echo "you tried logging in";
-
 	if(isset($_POST['submit'])) {
 		include_once '../include/connectDB.php';
 
