@@ -13,7 +13,7 @@
 <script type="text/javascript" src="registration-page.js"></script>
 
 <body>
-    <a href="../index.html"><img class="logo-header" src="logo.jpeg" alt="Logo"></a>
+    <a href="http://schedule-it.herokuapp.com/"><img class="logo-header" src="logo.jpeg" alt="Logo"></a>
 
     <form method="post" action="registration-complete.php">
         <div class="fields">
