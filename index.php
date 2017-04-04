@@ -1,3 +1,9 @@
+<?php
+  ob_start();
+  session_start();
+  include_once '/include/connectDB.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +16,7 @@
 	<meta name="description" content="" />
 
 <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
-	<link rel="stylesheet" href="homepage.css" type="text/css" />
+	<link rel="stylesheet" href="homepage/homepage.css" type="text/css" />
 
 </head>
 <body>
@@ -19,12 +25,12 @@
 
 	<div id="page">
 		<div id="logo">
-			<h1><img class="logo-header" src="logo.jpeg" alt="Logo"></h1>
+			<h1><img class="logo-header" src="homepage/logo.jpeg" alt="Logo"></h1>
 		</div>
 		<div id="nav">
 			<ul>
-				<li><a href="#/home.html">Sign In</a></li>
-				<li><a href="#/about.html">Sign Up</a></li>
+				<li><a href="login-page/index.html">Sign In</a></li>
+				<li><a href="registration-page/registration-page.php">Sign Up</a></li>
 				<li><a href="#/contact.html">Contact</a></li>
 			</ul>
 		</div>
