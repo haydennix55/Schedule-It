@@ -1,0 +1,109 @@
+body {
+	background: #f1f4f7;
+	padding-top: 50px;
+	color: #5f6468;
+}
+
+p {
+	color: #777;
+}
+
+a, a:hover, a:focus {
+	color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #5f6468;
+}
+
+h1 {
+	font-weight: 300;
+	font-size: 40px;
+}
+
+h2 {
+	font-weight: 300;
+	margin-bottom: 20px;
+}
+
+h3, h4 {
+	font-weight: 300;
+}
+
+.navbar-header .navbar-brand {
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.navbar-header .navbar-brand span {
+	color: #ffd700;
+}
+
+.user-menu {
+	display: inline-block;
+	margin-top: 14px;
+	margin-right: 10px;
+	float: right;
+	list-style: none;
+	padding: 0;
+}
+
+.user-menu a {
+	color: #fff;
+}
+
+.user-menu a:hover, .user-menu a:focus {
+	text-decoration: none;
+}
+
+/* Sidebar */
+
+.sidebar form {
+	padding: 20px 15px 5px 15px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 20px;
+}
+
+.sidebar {
+	display: block;
+	position: fixed;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: #fff;
+	box-shadow: 1px 0px 10px rgba(0, 0, 0, .05);
+}
+.navbar-header {
+		width: 100%;
+}
+
+.active {
+	color: #000000;
+	background-color: #ffd700;
+}
+
+.sidebar ul.nav li.divider {
+	border-bottom: 1px solid #eee;
+	margin: 20px 0;
+}
+
+h1.page-header {
+	margin-top: 10px;
+	border-bottom: 0;
+}
+
+.user-menu .glyph {
+	height: 16px;
+	width: 16px;
+	margin: 0 10px 0 0;
+	stroke-width: 3px;
+}
