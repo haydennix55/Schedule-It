@@ -16,7 +16,7 @@
 		$query = mysqli_query($conn, $sql);
 
 		while ($row = mysqli_fetch_assoc($query)){
-			echo "checking the database";
+			//echo "checking the database";
 			if($username == $row['username'] and password_verify($password, $row['password'])){
 
 				echo "confirming log in info";
