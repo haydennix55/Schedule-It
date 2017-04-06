@@ -24,7 +24,7 @@
 
 >>>>>>> a2b25694015036d665a35940a75cb4e5eea3369a
 		while ($row = mysqli_fetch_assoc($query)){
-			echo "checking the database";
+			//echo "checking the database";
 			if($username == $row['username'] and password_verify($password, $row['password'])){
 
 				echo "confirming log in info";
