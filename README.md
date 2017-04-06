@@ -1,6 +1,8 @@
 #Schedule-It
 Class Project for Software Development Methods and Tools
 
+###Our Live App:[schedule-it.herokuapp.com](schedule-it.herokuapp.com)
+
 #####Who:
 * Hayden Nix (haydennix55)
 * Eric Ha (eric-ha)
