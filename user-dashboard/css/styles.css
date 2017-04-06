@@ -62,13 +62,14 @@ h3, h4 {
 /* Sidebar */
 
 .sidebar form {
-	padding: 20px 15px 5px 15px;
+	padding: 50px 15px 5px 15px;
 	border-bottom: 1px solid #eee;
 	margin-bottom: 20px;
 }
 
 .sidebar {
 	display: block;
+	width: 0;
 	position: fixed;
 	top: 50px;
 	bottom: 0;
@@ -81,6 +82,7 @@ h3, h4 {
 	overflow-y: auto;
 	background-color: #fff;
 	box-shadow: 1px 0px 10px rgba(0, 0, 0, .05);
+	transition: 0.5s;
 }
 .navbar-header {
 		width: 100%;
@@ -95,6 +97,13 @@ h3, h4 {
 	border-bottom: 1px solid #eee;
 	margin: 20px 0;
 }
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
 
 h1.page-header {
 	margin-top: 10px;
@@ -106,4 +115,8 @@ h1.page-header {
 	width: 16px;
 	margin: 0 10px 0 0;
 	stroke-width: 3px;
+}
+.main {
+    transition: margin-left .5s;
+    padding: 20px;
 }
