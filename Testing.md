@@ -1,3 +1,9 @@
+**Who**: Helena Kwiat, Scott Campana, Benjamin Wasko, Hayden Nix, Eric Ha
+
+**Title**: Schedule It
+
+**Vision**: "Finding Hassle-Free Meeting Times"
+
 **Automated Tests**:
 
 ![Automated Tests Screenshot](autoTests.jpg?raw=true)
