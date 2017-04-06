@@ -1,5 +1,9 @@
 **Automated Tests**:
 
+![Automated Tests Screenshot](autoTests.jpg?raw=true)
+
+For automated testing, we decided to use an application called Katalon Studio. This let us track our webpage, and it would check link connections, variables, parameters, and other details, and return a status report.  From that we could see if any functionality failed, like a missing link, a last named filled in for a first names variable, etc.
+
 **User Acceptance Tests**:
 
 **1. *Registration***
@@ -28,9 +32,15 @@
 
 *Actual Result*
 
+* Success! You are greeted with a verification message
+
 *Status*
 
+* PASS
+
 *Notes*
+
+* Should add in a confirmation email to the entered address (for verification)
 
 *Post-Conditions*
 
@@ -61,9 +71,15 @@
 
 *Actual Result*
 
+* Failed! Cannot find a match in the database
+
 *Status*
 
+* FAIL
+
 *Notes*
+
+* Incorrect database queries
 
 *Post-Conditions*
 
@@ -95,9 +111,17 @@
 
 *Actual Result*
 
+* Partial Success! Being able to log in is a precondition that was not met, but the public pages link together
+* The dashboard pages link to eachother succesfully
+* The dashboard and public pages are not yet linked
+
 *Status*
 
+* FAIL
+
 *Notes*
+
+* Pre-Condition not met
 
 *Post-Conditions*
 
