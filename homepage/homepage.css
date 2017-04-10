@@ -46,11 +46,11 @@ body{
 		}
 			#nav ul li a{
 				padding: 20px;
-				background: linear-gradient(to bottom right, #F8FE4F, #FBFEA5);
 				color: black;
+        background-color: #ffd700;
 			}
 			#nav ul li a:hover{
-				background-color: #ffb424;
+				background-color: #ffd700;
 				box-shadow: 0px 1px 1px #666;
 			}
 			#nav ul li a:active{ background-color: #ff8f00; }
