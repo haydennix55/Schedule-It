@@ -8,7 +8,7 @@ Class Project for Software Development Methods and Tools
 * Eric Ha (eric-ha)
 * Benjamin Wasko (bewa4021)
 * Scott Campana (sbcampana)
-* Helena Kwiat (helenakwait)
+* Helena Kwiat (helenakwiat)
 
 Help coordinate group meetings to align with a team's busy schedules.
 
