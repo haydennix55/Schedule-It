@@ -22,14 +22,8 @@
 
 
 		if($confirm){
-			$sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
-
-			if(mysqli_query($conn, $sql)) {
-				echo "You successfully registered";
-			}
-			else {
-				echo "Error: Not able to execute $sql. " . mysqli_error($conn);
-			}
+			$reg = regUser($firstname, $last_name, $email, $username, $password_1);
+			echo $reg;
 		}
 		else{
 			echo "The two passwords you typed did not match";
