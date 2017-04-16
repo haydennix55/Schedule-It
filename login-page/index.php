@@ -31,7 +31,7 @@
 
         <!--Contains reset button and forgot pass button in aesthetic border-->
         <div class="container">
-            <a href="https://schedule-it.herokuapp.com/" class="cancelbtn">Cancel</a>
+					<button type="cancel" onclick="window.location='https://schedule-it.herokuapp.com/';return false;">Cancel</button>
             <a class="linkButton" href="http://schedule-it.herokuapp.com/registration-page/registration-page.php">New? Create Account</a>
             <span class="linkButton"><a href="#">Forgot password?</a></span>
         </div>
