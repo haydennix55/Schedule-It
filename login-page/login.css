@@ -12,7 +12,7 @@ input[type=text], input[type=password] {
 }
 
 button {
-    background-color: #ffd700;;
+    background-color: #ffd700;
     color: black;
     font-size: 20px;
     padding: 14px 20px;
@@ -26,6 +26,13 @@ button {
     width: auto;
     padding: 8px 18px;
     box-shadow: 0px 1px 1px #666
+
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: #ffd700;
 }
 
 .container {

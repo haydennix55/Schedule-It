@@ -25,13 +25,13 @@
             <input type="password" placeholder="Enter Password" name="pass" required>
 
             <!--This can be changed to a type="submit", but it exposes password in URL-->
-            <input type="submit" name="submit" value="submit" class="button">
+            <input type="submit" name="submit" value="Submit" class="button">
         </div>
 			</form>
 
         <!--Contains reset button and forgot pass button in aesthetic border-->
         <div class="container">
-            <button type="reset" class="cancelbtn">Cancel</button>
+            <a href="https://schedule-it.herokuapp.com/" class="cancelbtn">Cancel</a>
             <a class="linkButton" href="http://schedule-it.herokuapp.com/registration-page/registration-page.php">New? Create Account</a>
             <span class="linkButton"><a href="#">Forgot password?</a></span>
         </div>
