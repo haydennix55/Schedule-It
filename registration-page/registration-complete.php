@@ -18,12 +18,21 @@
 		// this could be altered to use password verify as well instead of just comparing the two hashed passwords.
 		// it might need to be changed
 
-		$confim = passCheck($password_1, $password_2);
+		//$confim = passCheck($password_1, $password_2);
+		$check = password_verify($password2, $password1);
 
 
-		if($confirm){
-			$reg = regUser($firstname, $last_name, $email, $username, $password_1);
-			echo $reg;
+		if($check){
+			//$reg = regUser($firstname, $last_name, $email, $username, $password_1);
+			$sql = "INSERT INTO users(first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
+
+			if(mysqli_query($conn, $sql)) {
+				return "You successfully registered";
+			}
+			else {
+				return "Error: Not able to execute $sql. " . mysqli_error($conn);
+			}
+			//echo $reg;
 		}
 		else{
 			echo "The two passwords you typed did not match";
