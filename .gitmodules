@@ -1,0 +1,3 @@
+[submodule "wdCalendar"]
+	path = wdCalendar
+	url = https://github.com/ronisaha/wdCalendar
