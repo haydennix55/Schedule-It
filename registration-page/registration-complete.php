@@ -2,9 +2,9 @@
 	session_start();
 
 	if(isset($_POST['submit'])){
-		include_once '/include/connectDB.php';
+		include_once '../include/connectDB.php';
 
-		
+
 
 		// Saves the input from the registration page to variables, it also parses out any strange characters to prevent injection
 		$first_name = mysqli_real_escape_string($conn, $_POST['first']);
@@ -20,11 +20,6 @@
 
 		//$confim = passCheck($password_1, $password_2);
 		$check = password_verify($password2, $password1);
-
-		echo "hello";
-
-		echo $check;
-
 
 		if($check){
 			//$reg = regUser($firstname, $last_name, $email, $username, $password_1);
