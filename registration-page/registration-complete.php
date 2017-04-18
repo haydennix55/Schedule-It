@@ -21,6 +21,8 @@
 		//$confim = passCheck($password_1, $password_2);
 		$check = password_verify($password2, $password1);
 
+		echo $check;
+
 
 		if($check){
 			//$reg = regUser($firstname, $last_name, $email, $username, $password_1);
