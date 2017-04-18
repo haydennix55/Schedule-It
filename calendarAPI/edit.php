@@ -1,3 +1,22 @@
+<?php
+include_once("php/dbconfig.php");
+include_once("php/functions.php");
+function getCalendarByRange($id){
+  try{
+    $db = new DBConnection();
+    $db->getConnection();
+    $sql = "select * from `jqcalendar` where `id` = " . $id;
+    $handle = mysql_query($sql);
+    //echo $sql;
+    $row = mysql_fetch_object($handle);
+	}catch(Exception $e){
+  }
+  return $row;
+}
+if($_GET["id"]){
+  $event = getCalendarByRange($_GET["id"]);
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
   <head>    
@@ -108,7 +127,7 @@
                 }
             });
             
-           $("#stpartdate,#etpartdate").datepicker({ picker: "<button class='calpick'></button>"});    
+           $("#stpartdate,#etpartdate").datepicker({ picker: "<button class='picker'></button>"});
             var cv =$("#colorvalue").val() ;
             if(cv=="")
             {
@@ -159,46 +178,16 @@
             }
         });
     </script>      
-    <style type="text/css">     
-    .calpick     {        
-        width:16px;   
-        height:16px;     
-        border:none;        
-        cursor:pointer;        
-        background:url("sample-css/cal.gif") no-repeat center 2px;        
-        margin-left:-22px;    
-    }      
-    .mask{
-        width:100%;
-        height:100%;
-        position:absolute;
-        background-color:grey;
-        z-index:1;
-        filter:alpha(opacity=80);
-        opacity:.8;
-    }
-    .mask div{
-        width: 50%;
-        text-align:center;
-        position: absolute; 
-        top: 50%;
-        left: 25%;
-        color:white;
-        
-    }
-    </style>
+
   </head>
-  <body>  
-    <div class="mask">
-      <div>This feature is disabled. Please download this plugin and install it in your machine for full features</div>
-    </div>  
+  <body>    
     <div>      
       <div class="toolBotton">           
         <a id="Savebtn" class="imgbtn" href="javascript:void(0);">                
           <span class="Save"  title="Save the calendar">Save(<u>S</u>)
           </span>          
         </a>                           
-        <?php if($event){ ?>
+        <?php if(isset($event)){ ?>
         <a id="Deletebtn" class="imgbtn" href="javascript:void(0);">                    
           <span class="Delete" title="Cancel the calendar">Delete(<u>D</u>)
           </span>                
@@ -212,47 +201,56 @@
       <div style="clear: both">         
       </div>        
       <div class="infocontainer">            
-        <form action="php/datafeed.php?method=adddetails<?php echo $event?"&id=".$event->Id:""; ?>" class="fform" id="fmEdit" method="post">                 
+        <form action="php/datafeed.php?method=adddetails<?php echo isset($event)?"&id=".$event->Id:""; ?>" class="fform" id="fmEdit" method="post">                 
           <label>                    
             <span>                        *Subject:              
             </span>                    
             <div id="calendarcolor">
             </div>
-            <input MaxLength="200" class="required safe" id="Subject" name="Subject" style="width:85%;" type="text" value="<?php echo $event?$event->Subject:"" ?>" />                     
-            <input id="colorvalue" name="colorvalue" type="hidden" value="<?php echo $event?$event->Color:"" ?>" />                
+            <input MaxLength="200" class="required safe" id="Subject" name="Subject" style="width:85%;" type="text" value="<?php echo isset($event)?$event->Subject:"" ?>" />                     
+            <input id="colorvalue" name="colorvalue" type="hidden" value="<?php echo isset($event)?$event->Color:"" ?>" />                
           </label>                 
           <label>                    
             <span>*Time:
             </span>                    
             <div>  
-              <?php if($event){
+              <?php
+                $all_day_event=false;
+                if(isset($event)){
                   $sarr = explode(" ", php2JsTime(mySql2PhpTime($event->StartTime)));
                   $earr = explode(" ", php2JsTime(mySql2PhpTime($event->EndTime)));
-              }?>                    
-              <input MaxLength="10" class="required date" id="stpartdate" name="stpartdate" style="padding-left:2px;width:90px;" type="text" value="<?php echo $event?$sarr[0]:""; ?>" />                       
-              <input MaxLength="5" class="required time" id="stparttime" name="stparttime" style="width:40px;" type="text" value="<?php echo $event?$sarr[1]:""; ?>" />To                       
-              <input MaxLength="10" class="required date" id="etpartdate" name="etpartdate" style="padding-left:2px;width:90px;" type="text" value="<?php echo $event?$earr[0]:""; ?>" />                       
-              <input MaxLength="50" class="required time" id="etparttime" name="etparttime" style="width:40px;" type="text" value="<?php echo $event?$earr[1]:""; ?>" />                                            
+                  $all_day_event=$event->IsAllDayEvent;
+                }
+                elseif(isset($_GET['start']) && $_GET['start']!=-360){
+                    $sarr = explode(" ",$_GET['start']);
+                    $earr = explode(" ",$_GET['end']);
+                    $all_day_event=($sarr[1]=="00:00" && $earr[1]=="00:00");
+                  }
+                ?>
+              <input MaxLength="10" class="required date" id="stpartdate" name="stpartdate" style="padding-left:2px;width:90px;" type="text" value="<?php echo isset($sarr[0])?$sarr[0]:""; ?>" />
+              <input MaxLength="5" class="required time" id="stparttime" name="stparttime" style="width:40px;" type="text" value="<?php echo isset($sarr[1])?$sarr[1]:""; ?>" />To
+              <input MaxLength="10" class="required date" id="etpartdate" name="etpartdate" style="padding-left:2px;width:90px;" type="text" value="<?php echo isset($earr[0])?$earr[0]:""; ?>" />
+              <input MaxLength="50" class="required time" id="etparttime" name="etparttime" style="width:40px;" type="text" value="<?php echo isset($earr[1])?$earr[1]:""; ?>" />
               <label class="checkp"> 
-                <input id="IsAllDayEvent" name="IsAllDayEvent" type="checkbox" value="1" <?php if($event&&$event->IsAllDayEvent!=0) {echo "checked";} ?>/>          All Day Event                      
+                <input id="IsAllDayEvent" name="IsAllDayEvent" type="checkbox" value="1" <?php if($all_day_event) {echo "checked";} ?>/>          All Day Event
               </label>                    
             </div>                
           </label>                 
           <label>                    
             <span>                        Location:
             </span>                    
-            <input MaxLength="200" id="Location" name="Location" style="width:95%;" type="text" value="<?php echo $event?$event->Location:""; ?>" />                 
+            <input MaxLength="200" id="Location" name="Location" style="width:95%;" type="text" value="<?php echo isset($event)?$event->Location:""; ?>" />                 
           </label>                 
           <label>                    
             <span>                        Remark:
             </span>                    
 <textarea cols="20" id="Description" name="Description" rows="2" style="width:95%; height:70px">
-<?php echo $event?$event->Description:""; ?>
+<?php echo isset($event)?$event->Description:""; ?>
 </textarea>                
           </label>                
           <input id="timezone" name="timezone" type="hidden" value="" />           
         </form>         
-      </div>         
+      </div>    
     </div>
   </body>
 </html>
