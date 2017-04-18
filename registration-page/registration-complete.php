@@ -4,7 +4,7 @@
 	if(isset($_POST['submit'])){
 		include_once '/include/connectDB.php';
 
-		require_once '../extra.php';
+		
 
 		// Saves the input from the registration page to variables, it also parses out any strange characters to prevent injection
 		$first_name = mysqli_real_escape_string($conn, $_POST['first']);
@@ -38,7 +38,7 @@
 			}
 			//echo $reg;
 		}
-		else{
+		else {
 			echo "The two passwords you typed did not match";
 		}
 	}
