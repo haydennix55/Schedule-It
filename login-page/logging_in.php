@@ -13,16 +13,17 @@
 
 		$sql = "SELECT uid, first_name, last_name, email, username, password FROM users";
 
-		echo $sql;
+		//echo $sql;
 
 		$query = mysqli_query($conn, $sql);
 
-		echo mysqli_fetch_assoc($query);
+		//echo mysqli_fetch_assoc($query);
 
 		while ($row = mysqli_fetch_assoc($query)){
 			//echo "checking the database";
 			echo $row['username'];
 			echo password_verify($password, $row['password']);
+			echo $username;
 
 			if($username == $row['username'] and password_verify($password, $row['password'])){
 
