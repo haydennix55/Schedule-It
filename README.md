@@ -1,9 +1,9 @@
-#Schedule-It
+# Schedule-It
 Class Project for Software Development Methods and Tools
 
-###Our Live App:[schedule-it.herokuapp.com](schedule-it.herokuapp.com)
+### Our Live App:[schedule-it.herokuapp.com](schedule-it.herokuapp.com)
 
-#####Who:
+##### Who:
 * Hayden Nix (haydennix55)
 * Eric Ha (eric-ha)
 * Benjamin Wasko (bewa4021)
@@ -12,20 +12,20 @@ Class Project for Software Development Methods and Tools
 
 Help coordinate group meetings to align with a team's busy schedules.
 
-####Vision Statement:
+#### Vision Statement:
 "Finding Hassle-Free Meeting Times"
 
-####Motivation:
+#### Motivation:
 Eliminates inefficiency in scheduling meetings manually
 
-####Risks:
+#### Risks:
 1. Front-End development will be a challenge
 2. Meeting times (ironic)
 
-####Mitigation:
+#### Mitigation:
 The group as a whole has light experience in every aspect, so we will use the group knowledge to work effectively.
 
-####User Stories:
+#### User Stories:
 
 1. As a student, I want to be able to input my weekly schedule so that I can plan my time and interactions more efficiently. (Estimated time: 5)
 
@@ -40,11 +40,7 @@ The group as a whole has light experience in every aspect, so we will use the gr
 6. As an personal individual, I want to be able to choose who can see my schedules so that I can keep my work and social life separate. (Estimated time: 8)
 
 
-####Methodology: Agile
+#### Methodology: Agile
 
-####Project Tracking: Github (projects link: https://github.com/haydennix55/chrome-extension/projects/1)
+#### Project Tracking: Github (projects link: https://github.com/haydennix55/chrome-extension/projects/1)
 Using GitHub Project Functionality, see Projects tab above.
-
-###Screenshots
-Login Page:
-[![login-page-screenshot.jpg](https://s23.postimg.org/6cwey2j6z/login_page_screenshot.jpg)](https://postimg.org/image/72f7afjqf/)
