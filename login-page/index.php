@@ -19,10 +19,10 @@
     <form method="post" action="logging_in.php">
         <div class="fields">
             <label>Username:</label>
-            <input type="text" placeholder="Enter Username" name="username" required>
+            <input type="text" id ="username" placeholder="Enter Username" name="username" required>
 
             <label>Password:</label>
-            <input type="password" placeholder="Enter Password" name="pass" required>
+            <input type="password" id ="password" placeholder="Enter Password" name="pass" required>
 
             <!--This can be changed to a type="submit", but it exposes password in URL-->
             <input type="submit" name="submit" value="Submit" class="button">
