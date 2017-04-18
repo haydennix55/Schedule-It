@@ -13,6 +13,8 @@
 
 		$sql = "SELECT uid, first_name, last_name, email, username, password FROM users";
 
+		echo $sql;
+		
 		$query = mysqli_query($conn, $sql);
 
 		echo mysqli_fetch_assoc($query);
