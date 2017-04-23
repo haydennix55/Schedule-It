@@ -43,7 +43,9 @@
  <!DOCTYPE html>
  <html>
  <link rel="stylesheet" type="text/css" href="registration-complete.css" media="screen" />
- 	<head>
- 		<div class="message">Hello, World!!</div>
-	</head>
-</html>
+    <body>
+        <div>
+            <h1>Thanks for Registering!</h1>
+        </div>
+    </body>
+ </html>
