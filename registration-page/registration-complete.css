@@ -2,7 +2,26 @@ body {
     background-color: black;
 }
 
-h1 {
+.message {
     color: #ffd700;
-    
+    width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.buttons {
+    width: 235px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.linkButton {
+    background-color: #ffd700;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.buttons form {
+    display: inline;
 }
