@@ -40,3 +40,7 @@
 	}
 
  ?>
+ <!DOCTYPE html>
+ <html>
+ 	<p>Hello, World!</p>
+</html>
