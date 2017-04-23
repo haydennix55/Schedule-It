@@ -28,6 +28,16 @@
 
 			if(mysqli_query($conn, $sql)) {
 				return "You successfully registered";
+				$url = 'http://schedule-it.herokuapp.com/registration-page/registration-complete.php'; // this can be set based on whatever
+
+				// clear out the output buffer
+				while (ob_get_status())
+				{
+    				ob_end_clean();
+				}
+
+				// no redirect
+				header( "Location: $url" );
 			}
 			else {
 				return "Error: Not able to execute $sql. " . mysqli_error($conn);
