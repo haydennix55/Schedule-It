@@ -4,6 +4,7 @@
 	if(isset($_POST['submit'])) {
 		include_once '../include/connectDB.php';
 
+        echo "connected to DB";
 		$searhInput = mysqli_real_escape_string($conn, $_POST['Search']);
 
 		$sql = "SELECT first_name, last_name, username from users where username = ". $searchInput;
