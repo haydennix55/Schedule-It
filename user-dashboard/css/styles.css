@@ -62,7 +62,16 @@ h3, h4 {
 .user-menu a:hover, .user-menu a:focus {
 	text-decoration: none;
 }
+input[type=text] {
+	width: 300px;
 
+}
+.search-button{
+	width: 75px;
+	height: 25px;
+	position: absolute;
+	left: 240px;
+}
 /* Sidebar */
 
 .sidebar form {
