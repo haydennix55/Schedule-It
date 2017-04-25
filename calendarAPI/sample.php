@@ -155,7 +155,7 @@
                     $(this).removeClass("fcurrent");
                 })
                 $(this).addClass("fcurrent");
-                var p = $("#gridcontainer").swtichView("week").BcalGetOp();
+                var p = $("#gridcontainer").swtichView("day").BcalGetOp();
                 if (p && p.datestrshow) {
                     $("#txtdatetimeshow").text(p.datestrshow);
                 }
