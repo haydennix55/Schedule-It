@@ -1,21 +1,28 @@
 <?php
 	session_start();
 
-	if(isset($_POST['submit'])) {
-		include_once '../include/connectDB.php';
+    $server = "us-cdbr-iron-east-03.cleardb.net";
+    $username = "b93aa055892ff0";
+    $password = "a2da8580";
+    define('DBNAME', 'heroku_2dba9b3d9ee490e');
 
-        echo "connected to DB";
-		$searhInput = mysqli_real_escape_string($conn, $_POST['Search']);
+    $conn = new mysqli($server, $username, $password, DBNAME);
 
-		$sql = "SELECT first_name, last_name, username from users where username = ". $searchInput;
+    if(mysqli_ping($conn) == false){
+        echo "Connection did not work";
+    }
 
+    echo "connected to DB";
+	$searhInput = mysqli_real_escape_string($conn, $_POST['Search']);
 
-		$query = mysqli_query($conn, $sql);
+	$sql = "SELECT first_name, last_name, username FROM users WHERE username = ". $searchInput;
 
+	$query = mysqli_query($conn, $sql);
 
-		while ($row = mysqli_fetch_assoc($query)){
-			echo "Match Found";
-		}
-	}
+    if($query){
+        if ($row = mysqli_fetch_assoc($query)){
+    		echo "Match Found";
+    	}
+    }
 
  ?>
