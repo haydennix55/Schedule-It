@@ -13,7 +13,7 @@
 
 
 		while ($row = mysqli_fetch_assoc($query)){
-			echo "Match Found"
+			echo "Match Found";
 		}
 	}
 
