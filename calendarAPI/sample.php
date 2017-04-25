@@ -234,10 +234,10 @@
             </div>
               <div class="btnseparator"></div>
 
-            <div id="showdaybtn" class="fbutton">
+            <div id="showdaybtn" class="fbutton fcurrent">
                 <div><span title='Day' class="showdayview">Day</span></div>
             </div>
-              <div  id="showweekbtn" class="fbutton fcurrent">
+              <div  id="showweekbtn" class="fbutton">
                 <div><span title='Week' class="showweekview">Week</span></div>
             </div>
               <div  id="showmonthbtn" class="fbutton">
