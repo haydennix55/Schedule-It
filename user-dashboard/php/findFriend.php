@@ -15,9 +15,10 @@
     echo "connected to DB";
 	$searhInput = mysqli_real_escape_string($conn, $_POST['Search']);
 
-	$sql = "SELECT first_name, last_name, username FROM users WHERE username = ". $searchInput;
+	$sql = "SELECT first_name, last_name, username FROM users WHERE username = \"x" . $searchInput . "\"";
 
 	$query = mysqli_query($conn, $sql);
+
 
     if($query){
         if ($row = mysqli_fetch_assoc($query)){
