@@ -13,7 +13,7 @@
     }
 
     echo "connected to DB\n";
-	$searchInput = mysqli_real_escape_string($conn, $_POST['Search']);
+	$searchInput = mysqli_real_escape_string($conn, $_POST['friends-search']);
 
     echo $searchInput . "\n";
 	$sql = "SELECT first_name, last_name, username FROM users WHERE username = \"" . $searchInput . "\"";
