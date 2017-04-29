@@ -36,6 +36,7 @@
 				$_SESSION['email'] = $row['email'];
 				$_SESSION['username'] = $row['username'];
 				echo "login successful";
+				header("Location:/user-dashboard/index.php");
 			}
 			else {
 				$login = 0;

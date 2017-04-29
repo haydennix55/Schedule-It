@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+      exit();
+}
+
+$username = $_SESSION['username'];
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
