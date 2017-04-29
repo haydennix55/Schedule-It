@@ -50,8 +50,8 @@ $username = $_SESSION['username'];
 		</form>
 		<ul class="nav menu">
 			<li class="active"><a href="index.php"> Dashboard</a></li>
-			<li><a href="calender.html"> Calender</a></li>
-			<li><a href="groups.html"> Groups</a></li>
+			<li><a href="calender.php"> Calender</a></li>
+			<li><a href="groups.php"> Groups</a></li>
 			<div class="dropdown">
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
