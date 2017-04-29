@@ -28,6 +28,8 @@
 
 			if(mysqli_query($conn, $sql)) {
 				return "You successfully registered";
+				header("Location:registration-complete.php");
+
 			}
 			else {
 				return "Error: Not able to execute $sql. " . mysqli_error($conn);
