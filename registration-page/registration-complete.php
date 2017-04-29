@@ -48,7 +48,7 @@
             <h1 class="message">Thanks for Registering!</h1>
         </div>
         <div class="buttons">
-            <form action="http://schedule-it.herokuapp.com/user-dashboard/index.html">
+            <form action="http://schedule-it.herokuapp.com/user-dashboard/index.php">
                 <button type="submit" class="linkButton">Continue to Dashboard</button>
             </form>
             <form action="http://schedule-it.herokuapp.com/login-page/index.php">

@@ -39,7 +39,7 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="index.html"> Dashboard</a></li>
+			<li class="active"><a href="index.php"> Dashboard</a></li>
 			<li><a href="calender.html"> Calender</a></li>
 			<li><a href="groups.html"> Groups</a></li>
 			<div class="dropdown">
