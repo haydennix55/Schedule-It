@@ -27,11 +27,11 @@
 			$sql = "INSERT INTO users(first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
 
 			if(mysqli_query($conn, $sql)) {
-				return "You successfully registered";
+				echo "You successfully registered";
 
 			}
 			else {
-				return "Error: Not able to execute $sql. " . mysqli_error($conn);
+				echo "Error: Not able to execute $sql. " . mysqli_error($conn);
 			}
 			//echo $reg;
 		}
