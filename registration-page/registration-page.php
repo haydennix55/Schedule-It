@@ -15,7 +15,7 @@
 <body>
     <a href="http://schedule-it.herokuapp.com/"><img class="logo-header" src="logo.jpeg" alt="Logo"></a>
 
-    <form method="post" action="registration-complete.php">
+    <form method="post" action="registration-check.php">
         <div class="fields">
             <label>First Name</label></br>
             <input class="field" type="text" placeholder="Enter your first name" name="first" id="first" required maxlength="40"></br>
