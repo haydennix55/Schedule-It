@@ -32,7 +32,7 @@ $username = $_SESSION['username'];
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Profile</a></li>
 							<li><a href="#">Settings</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="php/logout.php">Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -83,6 +83,7 @@ $username = $_SESSION['username'];
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
 
 <script>
 function openBar() {
