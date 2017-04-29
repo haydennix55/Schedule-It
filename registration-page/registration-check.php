@@ -27,7 +27,13 @@
 			$sql = "INSERT INTO users(first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
 
 			if(mysqli_query($conn, $sql)) {
-				echo "You successfully registered";
+				$login = 1;
+				$_SESSION['login'] = 1;
+				$_SESSION['first'] = $first_name;
+				$_SESSION['last'] = $last_name;
+				$_SESSION['email'] = $email;
+				$_SESSION['username'] = $username;
+
 				header("Location:registration-complete.php");
 
 			}
