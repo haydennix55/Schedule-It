@@ -28,7 +28,7 @@
 
 			if(mysqli_query($conn, $sql)) {
 				echo "You successfully registered";
-				header("Location:registration-complete.html");
+				header("Location:registration-complete.php");
 
 			}
 			else {
