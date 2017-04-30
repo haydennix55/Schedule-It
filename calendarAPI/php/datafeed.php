@@ -41,7 +41,7 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`) values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`, 'Invited') values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
       .php2MySqlTime(js2PhpTime($et))."', '"
@@ -49,6 +49,7 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
       .mysql_real_escape_string($dscr)."', '"
       .mysql_real_escape_string($loc)."', '"
       .mysql_real_escape_string($color)."', '"
+      .mysql_real_escape_string($Invited)."', '"
       .$uid."' )";
     //echo($sql);
 		if(mysql_query($sql)==false){
@@ -168,7 +169,8 @@ function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, 
       . " `isalldayevent`='" . mysql_real_escape_string($ade) . "', "
       . " `description`='" . mysql_real_escape_string($dscr) . "', "
       . " `location`='" . mysql_real_escape_string($loc) . "', "
-      . " `color`='" . mysql_real_escape_string($color) . "' "
+      . " `color`='" . mysql_real_escape_string($color) . "', "
+      ."'invited'=" . mysql_real_escape_string($invited). "', "
       . "where `id`=" . $id;
     //echo $sql;
 		if(mysql_query($sql)==false){
