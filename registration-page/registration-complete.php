@@ -54,7 +54,6 @@
 		echo $response->headers();
 		echo $response->body();
 
-		echo "success";
 
 	}
 
