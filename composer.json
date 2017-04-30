@@ -1,7 +1,7 @@
 {
 	"require": {
 		"php": ">=5.6.0",
-		"ext-mysql": "*",
+		
 		"sendgrid/sendgrid": "~5.4"
 		}
 }
