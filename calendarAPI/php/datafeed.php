@@ -169,7 +169,7 @@ function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, 
       . " `isalldayevent`='" . mysql_real_escape_string($ade) . "', "
       . " `description`='" . mysql_real_escape_string($dscr) . "', "
       . " `location`='" . mysql_real_escape_string($loc) . "', "
-      . " `color`='" . mysql_real_escape_string($color) . "', "
+      . " `color`='" . mysql_real_escape_string($color) . "' "
       . "where `id`=" . $id;
     //echo $sql;
 		if(mysql_query($sql)==false){
