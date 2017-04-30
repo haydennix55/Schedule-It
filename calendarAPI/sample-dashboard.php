@@ -1,4 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+include 'index.php';
+ ?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1">
     <title>	My Calendar </title>
@@ -210,6 +213,7 @@
 
         });
     </script>
+
 </head>
 <body>
     <div>
@@ -235,13 +239,13 @@
               <div class="btnseparator"></div>
 
             <div id="showdaybtn" class="fbutton fcurrent">
-                <div><span title='Day' class="showdayview">Day</span></div>
+                <div><span title='Day' class="showdayview" onclick="condenseCalendar">Day</span></div>
             </div>
               <div  id="showweekbtn" class="fbutton">
-                <div><span title='Week' class="showweekview">Week</span></div>
+                <div><span title='Week' class="showweekview" onclick="expandCalendar">Week</span></div>
             </div>
               <div  id="showmonthbtn" class="fbutton">
-                <div><span title='Month' class="showmonthview">Month</span></div>
+                <div><span title='Month' class="showmonthview" onclick="expandCalendar">Month</span></div>
 
             </div>
             <div class="btnseparator"></div>
