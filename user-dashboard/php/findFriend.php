@@ -13,12 +13,13 @@
     }
 
     echo "connected to DB\n";
-	$searchInput = mysqli_real_escape_string($conn, $_POST['friends-search']);
+			$searchInput = mysqli_real_escape_string($conn, $_POST['friends-search']);
 
-     echo $searchInput . "\n";
-	$sql = "SELECT first_name, last_name, username FROM users WHERE username = \"" . $searchInput . "\"";
-     echo $sql . "\n"; 
-	$query = mysqli_query($conn, $sql);
+    echo $searchInput . "\n";
+			$sql = "SELECT first_name, last_name, username FROM users WHERE username = \"" . $searchInput . "\"";
+
+    echo $sql . "\n";
+			$query = mysqli_query($conn, $sql);
 
 
     if($query){
