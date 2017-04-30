@@ -98,6 +98,14 @@ function openBar() {
 function closeBar() {
     document.getElementById("sidebar-collapse").style.width = "0%";
 }
+
+function expandCalendar(){
+  document.getElementByClass("dash-calander").style.width = "1245";
+}
+
+function condenseCalendar(){
+  document.getElementByClass("dash-calander").style.width = "500";
+}
 </script>
 
 
