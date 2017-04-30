@@ -170,7 +170,7 @@ function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, 
       . " `description`='" . mysql_real_escape_string($dscr) . "', "
       . " `location`='" . mysql_real_escape_string($loc) . "', "
       . " `color`='" . mysql_real_escape_string($color) . "', "
-      ."'invited'=" . mysql_real_escape_string($invited). "', "
+      . " `Invited`='" . mysql_real_escape_string($Invited) . "', "
       . "where `id`=" . $id;
     //echo $sql;
 		if(mysql_query($sql)==false){
