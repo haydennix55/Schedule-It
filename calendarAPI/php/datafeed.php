@@ -2,7 +2,6 @@
 
 session_start();
 $uid = $_SESSION['uid'];
-echo $uid;
 
 date_default_timezone_set('America/Denver');
 
