@@ -1,7 +1,5 @@
 <?php
-
 	session_start();
-	require 'vendor/autoload.php';
 
 	if(isset($_POST['submit'])){
 		include_once '../include/connectDB.php';
@@ -29,53 +27,25 @@
 			$sql = "INSERT INTO users(first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password_1')";
 
 			if(mysqli_query($conn, $sql)) {
-				return "You successfully registered";
+				$login = 1;
+				$_SESSION['login'] = 1;
+				$_SESSION['first'] = $first_name;
+				$_SESSION['last'] = $last_name;
+				$_SESSION['email'] = $email;
+				$_SESSION['username'] = $username;
+				$_SESSION['uid'] = $row['uid'];
+
+				header("Location:registration-complete.php");
+
 			}
 			else {
-				return "Error: Not able to execute $sql. " . mysqli_error($conn);
+				echo "Error: Not able to execute $sql. " . mysqli_error($conn);
 			}
 			//echo $reg;
 		}
 		else {
 			echo "The two passwords you typed did not match";
 		}
-
-
-		$from = new SendGrid\Email(null, "test@example.com");
-		$subject = "Hello World from the SendGrid PHP Library!";
-		$to = new SendGrid\Email(null, $email);
-		$content = new SendGrid\Content("text/plain", "Hello, Email");
-		$email = new SendGrid\Mail($from, $subject, $to, $content);
-
-		$apiKey = getenv('SENDGRID_API_KEY');
-		$sg = new \SendGrid($apiKey);
-
-		$response = $sg->client->mail()->send()->post($mail);
-		echo $response->statusCode();
-		echo $response->headers();
-		echo $response->body();
-
-
 	}
 
  ?>
- 
-<!DOCTYPE html>
-<html>
-<link rel="stylesheet" type="text/css" href="registration-complete.css" media="screen" />
-   <body>
-       <div>
-           <h1 class="message">Thanks for Registering!</h1>
-       </div>
-       <div class="buttons">
-           <form action="http://schedule-it.herokuapp.com/user-dashboard/index.php">
-               <button type="submit" class="linkButton">Continue to Dashboard</button>
-           </form>
-           <form action="http://schedule-it.herokuapp.com/login-page/index.php">
-               <button type="submit" class="linkButton">Login Page</button>
-           </form>
-
-       </div>
-
-   </body>
-</html>

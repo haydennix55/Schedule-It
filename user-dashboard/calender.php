@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+    header("Location:/login-page/index.php");
+}
+
+$username = $_SESSION['username'];
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +31,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Profile</a></li>
 							<li><a href="#">Settings</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="php/logout.php">Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -38,13 +48,13 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="index.html"> Dashboard</a></li>
-			<li class="active"><a href="calender.html"> Calender</a></li>
-			<li><a href="groups.html"> Groups</a></li>
+			<li><a href="index.php"> Dashboard</a></li>
+			<li class="active"><a href="calender.php"> Calender</a></li>
+			<li><a href="groups.php"> Groups</a></li>
 			<div class="dropdown">
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
-			      <a href="#">Sign Out</a>
+			      <a href="php/logout.php">Sign Out</a>
 			      <a href="#">Change Email</a>
 			      <a href="#">Change Password</a>
 			    </div>

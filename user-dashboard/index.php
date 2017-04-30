@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+      header("Location:/login-page/index.php");
+}
+
+
+
+$username = $_SESSION['username'];
+$first_name = $_SESSION['first'];
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +32,11 @@
 				<a class="navbar-brand" href="#"><span>Schedule</span>It</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+						<?php echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>' . $first_name .  '<span class="caret"></span></a>'; ?>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Profile</a></li>
 							<li><a href="#">Settings</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="php/logout.php">Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -39,13 +53,13 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="index.html"> Dashboard</a></li>
-			<li><a href="calender.html"> Calender</a></li>
-			<li><a href="groups.html"> Groups</a></li>
+			<li class="active"><a href="index.php"> Dashboard</a></li>
+			<li><a href="calender.php"> Calender</a></li>
+			<li><a href="groups.php"> Groups</a></li>
 			<div class="dropdown">
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
-			      <a href="#">Sign Out</a>
+			      <a href="php/logout.php">Sign Out</a>
 			      <a href="#">Change Email</a>
 			      <a href="#">Change Password</a>
 			    </div>
@@ -73,6 +87,7 @@
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
 
 <script>
 function openBar() {
