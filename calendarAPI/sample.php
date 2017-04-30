@@ -1,6 +1,6 @@
 <?php
 session_start();
-$fname = $_SESSION['first'];
+$uid = $_SESSION['user_id'];
 
 ?>
 
@@ -230,7 +230,7 @@ $fname = $_SESSION['first'];
               <div id="faddbtn" class="fbutton">
                 <?php echo '<div><span title="Click to Create New Event" class="addcal">'
 
-                . $fname . '
+                . $uid . '
                 </span></div>'; ?>
             </div>
             <div class="btnseparator"></div>
