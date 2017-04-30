@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require 'vendor/autoload.php';
 
 	if(isset($_POST['submit'])){
 		include_once '../include/connectDB.php';
@@ -38,7 +39,6 @@
 			echo "The two passwords you typed did not match";
 		}
 
-		require_once 'vendor/autoload.php';
 
 		$from = new SendGrid\Email(null, "test@example.com");
 		$subject = "Hello World from the SendGrid PHP Library!";
