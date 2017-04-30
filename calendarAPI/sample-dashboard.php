@@ -239,13 +239,13 @@ include 'index.php';
               <div class="btnseparator"></div>
 
             <div id="showdaybtn" class="fbutton fcurrent">
-                <div><span title='Day' class="showdayview" onclick="condenseCalendar">Day</span></div>
+                <div><span title='Day' class="showdayview" onclick="condenseCalendar()">Day</span></div>
             </div>
               <div  id="showweekbtn" class="fbutton">
-                <div><span title='Week' class="showweekview" onclick="expandCalendar">Week</span></div>
+                <div><span title='Week' class="showweekview" onclick="expandCalendar()">Week</span></div>
             </div>
               <div  id="showmonthbtn" class="fbutton">
-                <div><span title='Month' class="showmonthview" onclick="expandCalendar">Month</span></div>
+                <div><span title='Month' class="showmonthview" onclick="expandCalendar()">Month</span></div>
 
             </div>
             <div class="btnseparator"></div>
