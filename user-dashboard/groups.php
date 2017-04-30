@@ -11,6 +11,7 @@ if(isset($_GET['user']) && !empty($_GET['user'])){
 
   $my_id = $_SESSION['user_id'];
   $username = getuser($user, 'username');
+  $first_name = $_SESSION['first'];
 
   echo $username;
 
@@ -35,7 +36,7 @@ if(isset($_GET['user']) && !empty($_GET['user'])){
 				<a class="navbar-brand" href="#"><span>Schedule</span>It</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+						<?php echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>' . $first_name .  '<span class="caret"></span></a>'; ?>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Profile</a></li>
 							<li><a href="#">Settings</a></li>
