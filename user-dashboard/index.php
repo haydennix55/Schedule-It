@@ -55,7 +55,7 @@ $username = $_SESSION['username'];
 			<div class="dropdown">
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
-			      <a href="#">Sign Out</a>
+			      <a href="php/logout.php">Sign Out</a>
 			      <a href="#">Change Email</a>
 			      <a href="#">Change Password</a>
 			    </div>
