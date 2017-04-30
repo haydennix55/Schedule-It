@@ -13,7 +13,7 @@ function addCalendar($st, $et, $sub, $ade){
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, 'uid') values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `uid`) values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
       .php2MySqlTime(js2PhpTime($et))."', '"
@@ -41,7 +41,7 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, 'uid') values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`) values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
       .php2MySqlTime(js2PhpTime($et))."', '"
