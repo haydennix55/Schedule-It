@@ -8,7 +8,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 
 
 $username = $_SESSION['username'];
-$first_name = $_SESSION['first_name'];
+$first_name = $_SESSION['first'];
 
  ?>
 
