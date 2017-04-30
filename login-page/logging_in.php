@@ -30,6 +30,7 @@
 				echo "confirming log in info";
 				$user = $row;
 				$login = 1;
+				$_SESSION['uid'] = $row['uid'];
 				$_SESSION['login'] = 1;
 				$_SESSION['first'] = $row['first_name'];
 				$_SESSION['last'] = $row['last_name'];

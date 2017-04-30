@@ -33,6 +33,7 @@
 				$_SESSION['last'] = $last_name;
 				$_SESSION['email'] = $email;
 				$_SESSION['username'] = $username;
+				$_SESSION['uid'] = $row['uid'];
 
 				header("Location:registration-complete.php");
 
