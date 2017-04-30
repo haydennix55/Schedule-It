@@ -36,12 +36,12 @@ function addCalendar($st, $et, $sub, $ade){
 }
 
 
-function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $invited){
+function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $inv){
   $ret = array();
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`, 'Invited') values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`, 'invited') values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
       .php2MySqlTime(js2PhpTime($et))."', '"
@@ -50,7 +50,7 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $in
       .mysql_real_escape_string($loc)."', '"
       .mysql_real_escape_string($color)."', '"
       .$uid."', '"
-      .mysql_real_escape_string($invited)."' )";
+      .mysql_real_escape_string($inv)."' )";
 
     //echo($sql);
 		if(mysql_query($sql)==false){
@@ -101,7 +101,9 @@ function listCalendarByRange($sd, $ed){
         $row->Color,
         1,//editable
         $row->Location,
-        ''//$attends
+        '',//$attends
+        $row->invited,
+        ''
       );
     }
 	}catch(Exception $e){
@@ -158,7 +160,7 @@ function updateCalendar($id, $st, $et){
   return $ret;
 }
 
-function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $invited){
+function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $inv){
   $ret = array();
   try{
     $db = new DBConnection();
@@ -171,7 +173,7 @@ function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, 
       . " `description`='" . mysql_real_escape_string($dscr) . "', "
       . " `location`='" . mysql_real_escape_string($loc) . "', "
       . " `color`='" . mysql_real_escape_string($color) . "', "
-      . " `Invited`='" . mysql_real_escape_string($invited) . "', "
+      . " `Invited`='" . mysql_real_escape_string($inv) . "', "
       . "where `id`=" . $id;
     //echo $sql;
 		if(mysql_query($sql)==false){
