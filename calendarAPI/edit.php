@@ -201,8 +201,7 @@ if($_GET["id"]){
       <div style="clear: both">
       </div>
       <div class="infocontainer">
-        <form action="php/datafeed.php?method=
-        details<?php echo isset($event)?"&id=".$event->Id:""; ?>" class="fform" id="fmEdit" method="post">
+        <form action="php/datafeed.php?method=adddetails<?php echo isset($event)?"&id=".$event->Id:""; ?>" class="fform" id="fmEdit" method="post">
           <label>
             <span>                        *Subject:
             </span>
