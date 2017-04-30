@@ -1,7 +1,6 @@
 <?php
 session_start();
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-      exit();
       header("Location:/login-page/index.php");
 }
 
@@ -9,7 +8,7 @@ $username = $_SESSION['username'];
 
  ?>
 
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
