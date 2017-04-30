@@ -1,10 +1,18 @@
 <?php
 session_start();
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-      header("Location:/login-page/index.php");
+include_once '../include/connectDB.php';
+include_once '../user-dashboard/functions.php';
+
+if(isset($_GET['user']) && !empty($_GET['user'])){
+  $user = $_GET['user'];
+} else {
+  $user = $_SESSION['user_id'];
 }
 
-$username = $_SESSION['username'];
+  $my_id = $_SESSION['user_id'];
+  $username = getuser($user, 'username');
+
+  echo $username;
 
  ?>
 
