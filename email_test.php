@@ -1,4 +1,6 @@
 <?php
+
+echo "hello";
 // If you are using Composer (recommended)
 require 'vendor/autoload.php';
 
