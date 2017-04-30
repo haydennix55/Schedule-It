@@ -69,7 +69,7 @@ $username = $_SESSION['username'];
 			<div class="col-lg-12">
 				<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
 				<h1 class="page-header">Groups</h1>
-				<form method="post" action="php/findFriend.php"> -->
+				<form method="post" action="php/findFriend.php">
 					<div class="friends-search">
 						<label>Search for Friends</label>
 					</div>
