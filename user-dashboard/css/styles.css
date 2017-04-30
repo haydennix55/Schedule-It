@@ -31,7 +31,7 @@ h3, h4 {
 }
 .dash-calander {
 	position: absolute;
-	left: 10px;
+	right: 10px;
 	top: 75px;
 	transition: 0.5s;
 }
@@ -191,7 +191,7 @@ h1.page-header {
 		background-color: #ffffff;
 		color: black;
 		padding: 7px;
-		width: 375%;
+		width: 400%;
 		text-align: left;
 		font-size: 14px;
 		text-indent: 8px;
