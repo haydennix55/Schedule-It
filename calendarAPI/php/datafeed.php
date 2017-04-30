@@ -36,12 +36,12 @@ function addCalendar($st, $et, $sub, $ade){
 }
 
 
-function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
+function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $invited){
   $ret = array();
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`) values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`, 'Invited') values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
       .php2MySqlTime(js2PhpTime($et))."', '"
@@ -49,7 +49,9 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
       .mysql_real_escape_string($dscr)."', '"
       .mysql_real_escape_string($loc)."', '"
       .mysql_real_escape_string($color)."', '"
-      .$uid."' )";
+      .$uid"', '"
+      .mysql_real_escape_string($invited)."' )";
+
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
@@ -156,7 +158,7 @@ function updateCalendar($id, $st, $et){
   return $ret;
 }
 
-function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
+function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $invited){
   $ret = array();
   try{
     $db = new DBConnection();
@@ -168,7 +170,8 @@ function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, 
       . " `isalldayevent`='" . mysql_real_escape_string($ade) . "', "
       . " `description`='" . mysql_real_escape_string($dscr) . "', "
       . " `location`='" . mysql_real_escape_string($loc) . "', "
-      . " `color`='" . mysql_real_escape_string($color) . "' "
+      . " `color`='" . mysql_real_escape_string($color) . "', "
+      . " `Invited`='" . mysql_real_escape_string($invited) . "', "
       . "where `id`=" . $id;
     //echo $sql;
 		if(mysql_query($sql)==false){
@@ -229,11 +232,11 @@ switch ($method) {
         if(isset($_GET["id"])){
             $ret = updateDetailedCalendar($_GET["id"], $st, $et,
                 $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"],
-                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"]);
+                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"], $_POST["invited"]);
         }else{
             $ret = addDetailedCalendar($st, $et,
                 $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"],
-                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"]);
+                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"], $_POST["invited"]);
         }
         break;
 

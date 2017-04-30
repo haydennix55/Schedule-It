@@ -24,7 +24,16 @@
     if($query){
         if ($row = mysqli_fetch_assoc($query)){
     		echo $searchInput "found!";
-    	}
-    }
+				if(isset($_GET["add"])) {
+				$query2 = mysql_query("SELECT uid FROM users WHERE id = '" . $_GET["add"] . "'");
+				if(mysql_num_rows($query2) > 0) {
+						$_query = mysql_query("SELECT * FROM friend_req WHERE from = '" . $_SESSION["username"] . "' AND to = '" . $_GET["add"] . "'");
+				if(mysql_num_rows($_query) == 0) {
+						mysql_query("INSERT INTO friend_req SET from = '" . $_SESSION["username"] . "', to = '" . $_GET["add"] . "'");
+						}
+					}
+				}
+  	}
+  }
 
  ?>
