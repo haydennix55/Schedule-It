@@ -1,10 +1,19 @@
 <?php
 session_start();
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-      header("Location:/login-page/index.php");
+include_once '../include/connectDB.php';
+include_once '../user-dashboard/functions.php';
+
+if(isset($_GET['user']) && !empty($_GET['user'])){
+  $user = $_GET['user'];
+} else {
+  $user = $_SESSION['user_id'];
 }
 
-$username = $_SESSION['username'];
+  $my_id = $_SESSION['user_id'];
+  $username = getuser($user, 'username');
+  $first_name = $_SESSION['first'];
+
+  echo $username;
 
  ?>
 
@@ -27,7 +36,7 @@ $username = $_SESSION['username'];
 				<a class="navbar-brand" href="#"><span>Schedule</span>It</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+						<?php echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>' . $first_name .  '<span class="caret"></span></a>'; ?>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Profile</a></li>
 							<li><a href="#">Settings</a></li>
@@ -54,7 +63,7 @@ $username = $_SESSION['username'];
 			<div class="dropdown">
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
-			      <a href="#">Sign Out</a>
+			      <a href="php/logout.php">Sign Out</a>
 			      <a href="#">Change Email</a>
 			      <a href="#">Change Password</a>
 			    </div>
