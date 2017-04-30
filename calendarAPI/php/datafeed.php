@@ -13,8 +13,8 @@ function addCalendar($st, $et, $sub, $ade){
     $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`) values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
-      .php2MySqlTime(js2PhpTime($et))."' )";
-      //.mysql_real_escape_string($uid)."' )";
+      .php2MySqlTime(js2PhpTime($et))."', '"
+      .mysql_real_escape_string($ade)."' )";
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
@@ -45,7 +45,6 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
       .mysql_real_escape_string($dscr)."', '"
       .mysql_real_escape_string($loc)."', '"
       .mysql_real_escape_string($color)."' )";
-      //.mysql_real_escape_string($uid)."' )";
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
