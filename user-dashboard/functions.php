@@ -1,12 +1,14 @@
 <?php
 include_once '/include/connectDB.php';
 function isLoggedIn(){
-  if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+  if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
     return true;
   }
   else {
+    header("Location:/login-page/index.php");
     return false;
   }
+  $username = $_SESSION['username'];
 }
 
 function getUser($id, $field){
