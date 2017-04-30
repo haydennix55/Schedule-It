@@ -5,7 +5,8 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 }
 
 $username = $_SESSION['username'];
- ?>
+
+?>
 
 <!DOCTYPE html>
 <html>

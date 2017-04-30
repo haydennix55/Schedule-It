@@ -12,12 +12,12 @@
         echo "Connection did not work";
     }
 
-    /* echo "connected to DB\n"; */
+    echo "connected to DB\n";
 	$searchInput = mysqli_real_escape_string($conn, $_POST['friends-search']);
 
-    /* echo $searchInput . "\n"; */
+     echo $searchInput . "\n";
 	$sql = "SELECT first_name, last_name, username FROM users WHERE username = \"" . $searchInput . "\"";
-    /* echo $sql . "\n"; */
+     echo $sql . "\n"; 
 	$query = mysqli_query($conn, $sql);
 
 
