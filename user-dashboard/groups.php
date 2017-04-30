@@ -1,20 +1,19 @@
 <?php
 session_start();
-include_once '../include/connectDB.php';
-include_once '../user-dashboard/functions.php';
-
-if(isset($_GET['user']) && !empty($_GET['user'])){
-  $user = $_GET['user'];
-} else {
-  $user = $_SESSION['user_id'];
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+      header("Location:/login-page/index.php");
 }
 
+<<<<<<< HEAD
+$username = $_SESSION['username'];
+=======
   $my_id = $_SESSION['user_id'];
   $username = getuser($user, 'username');
   $first_name = $_SESSION['first'];
 
   echo $username;
 
+>>>>>>> c78babef97eaaa20fd55d436968f1a1762b1c554
  ?>
 
 <!DOCTYPE html>
@@ -79,7 +78,7 @@ if(isset($_GET['user']) && !empty($_GET['user'])){
 			<div class="col-lg-12">
 				<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
 				<h1 class="page-header">Groups</h1>
-				<form method="post" action="php/findFriend.php">
+				<form method="post" action="php/findFriend.php"> -->
 					<div class="friends-search">
 						<label>Search for Friends</label>
 					</div>
