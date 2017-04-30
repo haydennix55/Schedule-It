@@ -49,7 +49,7 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $in
       .mysql_real_escape_string($dscr)."', '"
       .mysql_real_escape_string($loc)."', '"
       .mysql_real_escape_string($color)."', '"
-      .$uid"', '"
+      .$uid."', '"
       .mysql_real_escape_string($invited)."' )";
 
     //echo($sql);
