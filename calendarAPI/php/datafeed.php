@@ -49,8 +49,8 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
       .mysql_real_escape_string($dscr)."', '"
       .mysql_real_escape_string($loc)."', '"
       .mysql_real_escape_string($color)."', '"
-      .mysql_real_escape_string($Invited)."', '"
-      .$uid."' )";
+      .$uid"', '"
+      .mysql_real_escape_string($Invited)."' )";
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
