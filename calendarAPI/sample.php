@@ -1,5 +1,6 @@
 <?php
 session_start();
+$fname = $_SESSION['first'];
 
 ?>
 
@@ -227,10 +228,10 @@ session_start();
 
             <div id="caltoolbar" class="ctoolbar">
               <div id="faddbtn" class="fbutton">
-                <div><span title='Click to Create New Event' class="addcal">
+                <?php echo '<div><span title="Click to Create New Event" class="addcal">'
 
-                New Event
-                </span></div>
+                . $fname . '
+                </span></div>'; ?>
             </div>
             <div class="btnseparator"></div>
              <div id="showtodaybtn" class="fbutton">
