@@ -201,7 +201,8 @@ if($_GET["id"]){
       <div style="clear: both">
       </div>
       <div class="infocontainer">
-        <form action="php/datafeed.php?method=adddetails<?php echo isset($event)?"&id=".$event->Id:""; ?>" class="fform" id="fmEdit" method="post">
+        <form action="php/datafeed.php?method=
+        details<?php echo isset($event)?"&id=".$event->Id:""; ?>" class="fform" id="fmEdit" method="post">
           <label>
             <span>                        *Subject:
             </span>
@@ -251,7 +252,7 @@ if($_GET["id"]){
 <label>
   <span>                        Invite Friends:
   </span>
-  <input MaxLength="200" id="Invited" name="Invited" style="width:95%;" type="text" value="<?php echo isset($event)?$event->Invited:""; ?>" />
+  <input MaxLength="200" id="invited" name="invited" style="width:95%;" type="text" value="<?php echo isset($event)?$event->invited:""; ?>" />
 </label>
 
           <input id="timezone" name="timezone" type="hidden" value="" />

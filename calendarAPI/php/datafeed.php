@@ -36,7 +36,7 @@ function addCalendar($st, $et, $sub, $ade){
 }
 
 
-function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
+function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $invited){
   $ret = array();
   try{
     $db = new DBConnection();
@@ -50,7 +50,8 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
       .mysql_real_escape_string($loc)."', '"
       .mysql_real_escape_string($color)."', '"
       .$uid"', '"
-      .mysql_real_escape_string($Invited)."' )";
+      .mysql_real_escape_string($invited)."' )";
+
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
@@ -157,7 +158,7 @@ function updateCalendar($id, $st, $et){
   return $ret;
 }
 
-function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
+function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $invited){
   $ret = array();
   try{
     $db = new DBConnection();
@@ -170,7 +171,7 @@ function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, 
       . " `description`='" . mysql_real_escape_string($dscr) . "', "
       . " `location`='" . mysql_real_escape_string($loc) . "', "
       . " `color`='" . mysql_real_escape_string($color) . "', "
-      . " `Invited`='" . mysql_real_escape_string($Invited) . "', "
+      . " `Invited`='" . mysql_real_escape_string($invited) . "', "
       . "where `id`=" . $id;
     //echo $sql;
 		if(mysql_query($sql)==false){
@@ -231,11 +232,11 @@ switch ($method) {
         if(isset($_GET["id"])){
             $ret = updateDetailedCalendar($_GET["id"], $st, $et,
                 $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"],
-                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"]);
+                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"], $_POST["invited"]);
         }else{
             $ret = addDetailedCalendar($st, $et,
                 $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"],
-                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"]);
+                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"], $_POST["invited"]);
         }
         break;
 
