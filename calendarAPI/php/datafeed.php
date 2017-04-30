@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+$uid = $_SESSION['uid'];
+
 date_default_timezone_set('America/Denver');
 
 include_once("dbconfig.php");
@@ -9,11 +13,12 @@ function addCalendar($st, $et, $sub, $ade){
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`) values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `uid`) values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
       .php2MySqlTime(js2PhpTime($et))."', '"
-      .mysql_real_escape_string($ade)."' )";
+      .mysql_real_escape_string($ade)."', '"
+      .$uid."' )";
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
@@ -36,14 +41,15 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`) values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`) values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
       .php2MySqlTime(js2PhpTime($et))."', '"
       .mysql_real_escape_string($ade)."', '"
       .mysql_real_escape_string($dscr)."', '"
       .mysql_real_escape_string($loc)."', '"
-      .mysql_real_escape_string($color)."' )";
+      .mysql_real_escape_string($color)."', '"
+      .$uid."' )";
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
@@ -92,7 +98,7 @@ function listCalendarByRange($sd, $ed){
         0,//Recurring event,
         $row->Color,
         1,//editable
-        $row->Location, 
+        $row->Location,
         ''//$attends
       );
     }
@@ -111,7 +117,7 @@ function listCalendar($day, $type){
       $et = mktime(0, 0, -1, date("m", $phpTime)+1, 1, date("Y", $phpTime));
       break;
     case "week":
-      //suppose first day of a week is monday 
+      //suppose first day of a week is monday
       $monday  =  date("d", $phpTime) - date('N', $phpTime) + 1;
       //echo date('N', $phpTime);
       $st = mktime(0,0,0,date("m", $phpTime), $monday, date("Y", $phpTime));
@@ -213,7 +219,7 @@ switch ($method) {
         break;
     case "update":
         $ret = updateCalendar($_POST["calendarId"], $_POST["CalendarStartTime"], $_POST["CalendarEndTime"]);
-        break; 
+        break;
     case "remove":
         $ret = removeCalendar( $_POST["calendarId"]);
         break;
@@ -221,19 +227,19 @@ switch ($method) {
         $st = $_POST["stpartdate"] . " " . $_POST["stparttime"];
         $et = $_POST["etpartdate"] . " " . $_POST["etparttime"];
         if(isset($_GET["id"])){
-            $ret = updateDetailedCalendar($_GET["id"], $st, $et, 
-                $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"], 
+            $ret = updateDetailedCalendar($_GET["id"], $st, $et,
+                $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"],
                 $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"]);
         }else{
-            $ret = addDetailedCalendar($st, $et,                    
-                $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"], 
+            $ret = addDetailedCalendar($st, $et,
+                $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"],
                 $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"]);
-        }        
-        break; 
+        }
+        break;
 
 
 }
-echo json_encode($ret); 
+echo json_encode($ret);
 
 
 

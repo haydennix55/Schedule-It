@@ -1,13 +1,22 @@
+<?php
+session_start();
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+      header("Location:/login-page/index.php");
+}
+
+$username = $_SESSION['username'];
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Settings</title>
+<title>Groups</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
-
 
 </head>
 
@@ -22,7 +31,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Profile</a></li>
 							<li><a href="#">Settings</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="php/logout.php">Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -39,10 +48,17 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="index.html"> Dashboard</a></li>
-			<li><a href="calender.html"> Calender</a></li>
-			<li><a href="groups.html"> Groups</a></li>
-			<li class="active"><a href="settings.html"> Settings</a></li>
+			<li><a href="index.php"> Dashboard</a></li>
+			<li><a href="calender.php"> Calender</a></li>
+			<li class="active"><a href="groups.php"> Groups</a></li>
+			<div class="dropdown">
+			    <button class="dropbtn">Settings</button>
+			    <div class="dropdown-content">
+			      <a href="#">Sign Out</a>
+			      <a href="#">Change Email</a>
+			      <a href="#">Change Password</a>
+			    </div>
+			  </div>
 
 			<li role="presentation" class="divider"></li>
 		</ul>
@@ -53,10 +69,19 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
-				<h1 class="page-header">Settings</h1>
-			</div>
+				<h1 class="page-header">Groups</h1>
+				<form method="post" action="php/findFriend.php">
+					<div class="friends-search">
+						<label>Search for Friends</label>
+					</div>
+					<div class="friends-search">
+						<input type="text" id="search" placeholder="Username, email, or first and last name" name="friends-search" width=500>
+					</div>
+					<div>
+						<button class="search-button" type="submit" name="search" value="Search">Search</button>
+					</div>
+				</form>
 		</div>
-
 
 	</div>
 

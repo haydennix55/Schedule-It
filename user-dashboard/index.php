@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+      header("Location:/login-page/index.php");
+}
+
+$username = $_SESSION['username'];
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +32,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Profile</a></li>
 							<li><a href="#">Settings</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="php/logout.php">Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -39,9 +49,9 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="index.html"> Dashboard</a></li>
-			<li><a href="calender.html"> Calender</a></li>
-			<li><a href="groups.html"> Groups</a></li>
+			<li class="active"><a href="index.php"> Dashboard</a></li>
+			<li><a href="calender.php"> Calender</a></li>
+			<li><a href="groups.php"> Groups</a></li>
 			<div class="dropdown">
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
@@ -61,15 +71,19 @@
 			<div class="col-lg-12">
 				<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
 				<h1 class="page-header">Dashboard</h1>
-				<img><div style="text-align: center;"><IMG SRC="Lady.jpg" ALT="image" HEIGHT="500" WIDTH="900" SRC="Lady.jpg">
+				<!-- <img><div style="text-align: center;"><IMG SRC="Lady.jpg" ALT="image" HEIGHT="500" WIDTH="900" SRC="Lady.jpg"> -->
 
 			</div>
 		</div>
 
 	</div>
+	<div class="dash-calander" width="500">
+		<iframe class="dash-calander" src="/calendarAPI/sample-dashboard.php" width="500" height="800"></iframe>
+	</div>
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
 
 <script>
 function openBar() {

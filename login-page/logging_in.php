@@ -30,12 +30,14 @@
 				echo "confirming log in info";
 				$user = $row;
 				$login = 1;
+				$_SESSION['uid'] = $row['uid'];
 				$_SESSION['login'] = 1;
-				$_SESSIOM['first'] = $row['first_name'];
-				$_SESSIOM['last'] = $row['last_name'];
-				$_SESSIOM['email'] = $row['email'];
-				$_SESSIOM['username'] = $row['username'];
+				$_SESSION['first'] = $row['first_name'];
+				$_SESSION['last'] = $row['last_name'];
+				$_SESSION['email'] = $row['email'];
+				$_SESSION['username'] = $row['username'];
 				echo "login successful";
+				header("Location:/user-dashboard/index.php");
 			}
 			else {
 				$login = 0;
