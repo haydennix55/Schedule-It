@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-      header("Location:/login-page/index.php");
+    header("Location:/login-page/index.php");
 }
 
 $username = $_SESSION['username'];
@@ -54,7 +54,7 @@ $username = $_SESSION['username'];
 			<div class="dropdown">
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
-			      <a href="#">Sign Out</a>
+			      <a href="php/logout.php">Sign Out</a>
 			      <a href="#">Change Email</a>
 			      <a href="#">Change Password</a>
 			    </div>
