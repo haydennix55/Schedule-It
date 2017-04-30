@@ -1,7 +1,7 @@
 <?php
 
-session_start();
-$uid = $_SESSION['uid'];
+//session_start();
+$uid = 10; //$_SESSION['uid'];
 
 date_default_timezone_set('America/Denver');
 
