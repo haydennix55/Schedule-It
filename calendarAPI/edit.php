@@ -249,11 +249,6 @@ if($_GET["id"]){
 <?php echo isset($event)?$event->Description:""; ?>
 </textarea>
 </label>
-<label>
-  <span>                        Invite Friends:
-  </span>
-  <input MaxLength="200" id="invited" name="invited" style="width:95%;" type="text" value="<?php echo isset($event)?$event->invited:""; ?>" />
-</label>
 
           <input id="timezone" name="timezone" type="hidden" value="" />
         </form>
