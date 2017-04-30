@@ -31,9 +31,10 @@ h3, h4 {
 }
 .dash-calander {
 	position: absolute;
-	right: 10px;
+	left: 10px;
 	top: 75px;
-	transition: 0.5s;
+	resize: both;
+  overflow: auto;
 }
 .navbar-header .navbar-brand {
 	color: #fff;
