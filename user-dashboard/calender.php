@@ -1,7 +1,9 @@
 <?php
 session_start();
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-      header("Location:/login-page/index.php");
+    $message = "Sorry, you must be logged in to view this page!";
+    echo "<script type='text/javascript'>alert('$message');</script>"
+    header("Location:/login-page/index.php");
 }
 
 $username = $_SESSION['username'];
