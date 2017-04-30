@@ -1,8 +1,4 @@
 <?php
-session_start();
-
-$username = $_SESSION['username'];
-$uid = $_SESSION['uid'];
 
 date_default_timezone_set('America/Denver');
 
