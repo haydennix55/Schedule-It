@@ -250,7 +250,7 @@ if($_GET["id"]){
 <label>
   <span>                        Invite Friends:
   </span>
-  <input MaxLength="200" id="Location" name="Location" style="width:95%;" type="text" value="<?php echo isset($event)?$event->Location:""; ?>" />
+  <input MaxLength="200" id="Friends" name="Friends" style="width:95%;" type="text" value="<?php echo isset($event)?$event->Friends:""; ?>" />
 </label>
           </label>
           <input id="timezone" name="timezone" type="hidden" value="" />
