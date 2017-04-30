@@ -14,11 +14,11 @@ function addCalendar($st, $et, $sub, $ade){
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `uid`) values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`) values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
-      .php2MySqlTime(js2PhpTime($et))."', '"
-      .mysql_real_escape_string($uid)."' )";
+      .php2MySqlTime(js2PhpTime($et))."' )";
+      //.mysql_real_escape_string($uid)."' )";
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
@@ -41,15 +41,15 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
   try{
     $db = new DBConnection();
     $db->getConnection();
-    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`, `uid`) values ('"
+    $sql = "insert into `jqcalendar` (`subject`, `starttime`, `endtime`, `isalldayevent`, `description`, `location`, `color`) values ('"
       .mysql_real_escape_string($sub)."', '"
       .php2MySqlTime(js2PhpTime($st))."', '"
       .php2MySqlTime(js2PhpTime($et))."', '"
       .mysql_real_escape_string($ade)."', '"
       .mysql_real_escape_string($dscr)."', '"
       .mysql_real_escape_string($loc)."', '"
-      .mysql_real_escape_string($color)."', '"
-      .mysql_real_escape_string($uid)."' )";
+      .mysql_real_escape_string($color)."' )";
+      //.mysql_real_escape_string($uid)."' )";
     //echo($sql);
 		if(mysql_query($sql)==false){
       $ret['IsSuccess'] = false;
