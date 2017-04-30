@@ -32,7 +32,7 @@ h3, h4 {
 .dash-calander {
 	position: absolute;
 	left: 10px;
-	top: 50px;
+	top: 75px;
 	transition: 0.5s;
 }
 .navbar-header .navbar-brand {
