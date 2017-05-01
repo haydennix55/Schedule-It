@@ -79,6 +79,7 @@ $first_name = $_SESSION['first'];
       while($run_mem = mysql_fetch_array($mem_query)){
         $user_id = $run_mem['uid'];
         echo $user_id;
+        echo "Testing";
       }
      ?>
 
