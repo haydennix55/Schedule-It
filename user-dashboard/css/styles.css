@@ -32,13 +32,11 @@ h3, h4 {
 .dash-calander {
 	position: absolute;
 	padding-top: 75px;
-}
-#Iframe {
-	position: absolute;
-	left: 10px;
-	padding-top: 50px;
 	width: 500px;
 	height: 800px;
+	left: 10px
+}
+
 }
 .dash-calander iframe{
 	position: absolute;
