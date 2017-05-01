@@ -1,7 +1,8 @@
 <?php
+ob_start();
 session_start();
 include_once '/php/functions.php';
-include_once '/include/connectDB.php';
+include_once 'connectDB.php';
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
       header("Location:/login-page/index.php");
@@ -72,18 +73,38 @@ $first_name = $_SESSION['first'];
 	<div id="Main" class="col-sm-9 col-sm col-lg-10 col-lg main">
     <div class="row">
 			<div class="col-lg-12">
-				<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
+			  <span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
 				<h1 class="page-header">Members</h1>
-		<?php
-      $mem_query = mysql_query("SELECT uid FROM users");
-      while($run_mem = mysql_fetch_array($mem_query)){
-        $user_id = $run_mem['uid'];
-        $uName = getUser($user_id, 'username');
-        echo $uName;
-      }
-     ?>
+		        <?php
 
-	</div>
+              $server = "us-cdbr-iron-east-03.cleardb.net";
+              $username = "b93aa055892ff0";
+              $password = "a2da8580";
+              define('DBNAME', 'heroku_2dba9b3d9ee490e');
+
+              $conn = new mysqli($server, $username, $password, DBNAME);
+
+              if(mysqli_ping($conn) == false){
+                echo "Connection did not work";
+              }
+
+              $sql = "SELECT first_name, last_name, username FROM users ORDER BY first_name ASC";
+              $result = $conn->query($sql);
+
+              if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                  echo $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>";
+                }
+              } else {
+                echo "0 results";
+              }
+            ?>
+
+	    </div>
+    </div>
+   </div>
+
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
