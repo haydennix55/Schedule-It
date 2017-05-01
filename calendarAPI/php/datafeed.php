@@ -67,7 +67,7 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $ui
   return $ret;
 }
 
-function listCalendarByRange($sd, $ed){
+function listCalendarByRange($sd, $ed,$uid){
   $ret = array();
   $ret['events'] = array();
   $ret["issort"] =true;
@@ -78,7 +78,7 @@ function listCalendarByRange($sd, $ed){
     $db = new DBConnection();
     $db->getConnection();
     $sql = "select * from `jqcalendar` where (`starttime` between '"
-      .php2MySqlTime($sd)."' and '". php2MySqlTime($ed)."' and `uid` = 52) ORDER BY starttime ASC";
+      .php2MySqlTime($sd)."' and '". php2MySqlTime($ed)."' and `uid` = ".$uid." ORDER BY starttime ASC";
     $handle = mysql_query($sql);
     //echo $sql;
     while ($row = mysql_fetch_object($handle)) {
