@@ -67,7 +67,7 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $ui
   return $ret;
 }
 
-function listCalendarByRange($sd, $ed,$uid){
+function listCalendarByRange($sd, $ed, $uid){
   $ret = array();
   $ret['events'] = array();
   $ret["issort"] =true;
@@ -130,7 +130,7 @@ function listCalendar($day, $type){
       break;
   }
   //echo $st . "--" . $et;
-  return listCalendarByRange($st, $et);
+  return listCalendarByRange($st, $et, $uid);
 }
 
 function updateCalendar($id, $st, $et){
@@ -216,7 +216,7 @@ switch ($method) {
         $ret = addCalendar($_POST["CalendarStartTime"], $_POST["CalendarEndTime"], $_POST["CalendarTitle"], $_POST["IsAllDayEvent"], $uid);
         break;
     case "list":
-        $ret = listCalendar($_POST["showdate"], $_POST["viewtype"]);
+        $ret = listCalendar($_POST["showdate"], $_POST["viewtype"], $uid);
         break;
     case "update":
         $ret = updateCalendar($_POST["calendarId"], $_POST["CalendarStartTime"], $_POST["CalendarEndTime"]);
