@@ -76,7 +76,7 @@ $first_name = $_SESSION['first'];
 				<!---<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>-->
 				<h1 class="page-header">Members</h1>
 		        <?php
-              $query="SELECT uid FROM MY_TABLE";
+              $query="SELECT uid FROM users";
               $results = mysql_query($query);
 
               while ($row = mysql_fetch_array($results)) {
