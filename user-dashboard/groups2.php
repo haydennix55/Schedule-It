@@ -88,7 +88,7 @@ $first_name = $_SESSION['first'];
                 echo "Connection did not work";
               }
 
-              $sql = "SELECT first_name, last_name, username FROM users";
+              $sql = "SELECT first_name, last_name, username FROM users ORDER BY first_name ASC";
               $result = $conn->query($sql);
 
               if ($result->num_rows > 0) {
