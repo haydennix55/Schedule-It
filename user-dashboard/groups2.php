@@ -76,10 +76,29 @@ $first_name = $_SESSION['first'];
 				<!---<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>-->
 				<h1 class="page-header">Members</h1>
 		        <?php
-              include_once 'connectDB.php';
-              $query="SELECT * FROM users";
-              echo $query;
-              echo "Test";
+
+              $server = "us-cdbr-iron-east-03.cleardb.net";
+              $username = "b93aa055892ff0";
+              $password = "a2da8580";
+              define('DBNAME', 'heroku_2dba9b3d9ee490e');
+
+              $conn = new mysqli($server, $username, $password, DBNAME);
+
+              if(mysqli_ping($conn) == false){
+                echo "Connection did not work";
+              }
+
+              $sql = "SELECT uid, first_name, last_name FROM users";
+              $result = $conn->query($sql);
+
+              if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                  echo "id: " . $row["uid"]. " - Name: " . $row["first_name"]. " " . $row["last_name"]. "<br>";
+                }
+              } else {
+                echo "0 results";
+              }
             ?>
 
 	    <!-- </div> -->
