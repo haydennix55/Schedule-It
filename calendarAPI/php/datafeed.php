@@ -109,7 +109,7 @@ function listCalendarByRange($sd, $ed, $uid){
   return $ret;
 }
 
-function listCalendar($day, $type){
+function listCalendar($day, $type, $uid){
   $phpTime = js2PhpTime($day);
   //echo $phpTime . "+" . $type;
   switch($type){
