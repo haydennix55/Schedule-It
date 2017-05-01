@@ -81,7 +81,7 @@ $first_name = $_SESSION['first'];
 		</div>
 
 	</div>
-	<div id="iframe" class="dash-calander" width="20%" height="50%">
+	<div id="Iframe" class="dash-calander">
 		<iframe class="dash-calander" src="/calendarAPI/sample-dashboard.php"></iframe>
 	</div>
 
@@ -100,11 +100,11 @@ function closeBar() {
 }
 
 function expandCalendar(){
-  document.getElementById("iframe").style.width = "40%";
+  document.getElementById("Iframe").style.width = "800";
 }
 
 function condenseCalendar(){
-  document.getElementById("iframe").style.width = "20%";
+  document.getElementById("Iframe").style.width = "500";
 }
 </script>
 
