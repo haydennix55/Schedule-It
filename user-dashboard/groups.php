@@ -2,6 +2,13 @@
 session_start();
 include_once '/php/functions.php';
 
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+      header("Location:/login-page/index.php");
+}
+
+
+
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -79,8 +86,8 @@ include_once '/php/functions.php';
 				</form>
 		</div>
 
+		</div>
 	</div>
-
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>

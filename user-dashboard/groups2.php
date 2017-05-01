@@ -1,8 +1,17 @@
 <?php
 session_start();
-include_once '/php/functions.php';
+include_once '/include/connectDB.php';
 
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+      header("Location:/login-page/index.php");
+}
+
+
+
+$username = $_SESSION['username'];
+$first_name = $_SESSION['first'];
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
