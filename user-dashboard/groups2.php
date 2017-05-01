@@ -76,10 +76,15 @@ $first_name = $_SESSION['first'];
 				<!---<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>-->
 				<h1 class="page-header">Members</h1>
 		        <?php
-              $mem_query = mysql_query("SELECT uid FROM users");
-              while($run_mem = mysql_fetch_array($mem_query)){
-                $uID= $run_mem['uid'];
-                echo $uID;
+              $query="SELECT uid FROM MY_TABLE";
+              $results = mysql_query($query);
+
+              while ($row = mysql_fetch_array($results)) {
+                echo '<tr>';
+                foreach($row as $field) {
+                  echo '<td>' . htmlspecialchars($field) . '</td>';
+                }
+                echo '</tr>';
               }
               echo "Test";
             ?>
