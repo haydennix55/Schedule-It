@@ -78,7 +78,7 @@ function listCalendarByRange($sd, $ed, $uid){
     $db = new DBConnection();
     $db->getConnection();
     $sql = "select * from `jqcalendar` where (`starttime` between '"
-      .php2MySqlTime($sd)."' and '". php2MySqlTime($ed)."' and `uid` = ".mysql_real_escape_string($uid).") ORDER BY starttime ASC";
+      .php2MySqlTime($sd)."' and '". php2MySqlTime($ed)."' and `uid` = '" . $uid ."') ORDER BY starttime ASC";
     $handle = mysql_query($sql);
     //echo $sql;
     while ($row = mysql_fetch_object($handle)) {
