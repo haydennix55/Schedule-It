@@ -1,7 +1,8 @@
 <?php
+ob_start();
 session_start();
 include_once '/php/functions.php';
-include_once '/include/connectDB.php';
+include_once 'connectDB.php';
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
       header("Location:/login-page/index.php");
@@ -79,8 +80,8 @@ $first_name = $_SESSION['first'];
               while($run_mem = mysql_fetch_array($mem_query)){
                 $uID= $run_mem['uid'];
                 echo $uID;
-            }
-          ?>
+              }
+            ?>
 
 	    <!-- </div> -->
     </div>
