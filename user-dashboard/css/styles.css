@@ -29,17 +29,17 @@ h2 {
 h3, h4 {
 	font-weight: 300;
 }
-#Iframe {
+.dash-calander {
 	position: absolute;
-	left: 10px;
-	padding-top: 50px;
+	top: 100px;
 	width: 500px;
 	height: 800px;
+	left: 10px
+}
+
 }
 .dash-calander iframe{
 	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
 
