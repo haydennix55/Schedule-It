@@ -74,16 +74,19 @@ $first_name = $_SESSION['first'];
 			<div class="col-lg-12">
 				<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
 				<h1 class="page-header">Members</h1>
-		<?php
-      $mem_query = mysql_query("SELECT uid FROM users");
-      while($run_mem = mysql_fetch_array($mem_query)){
-        $user_id = $run_mem['uid'];
-        $uName = getUser($user_id, 'username');
-        echo $uName;
-      }
-     ?>
+		        <?php
+              $mem_query = mysql_query("SELECT uid FROM users");
+              while($run_mem = mysql_fetch_array($mem_query)){
+              $user_id = $run_mem['uid'];
+              $uName = getUser($user_id, 'username');
+              echo $uName;
+            }
+          ?>
 
-	</div>
+	     </div>
+    </div>
+  </div>
+
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
