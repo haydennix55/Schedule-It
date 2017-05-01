@@ -254,3 +254,12 @@ h1.page-header {
 		width:50%;
 		min-height:500px;
 }
+
+.box{
+	background: #333;
+	color:#fff;
+	padding:10px;
+	border-radius:5px;
+	margin:10px 0px;
+	text-decoration:none;
+}

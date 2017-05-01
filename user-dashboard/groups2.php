@@ -94,7 +94,8 @@ $first_name = $_SESSION['first'];
               if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                  echo $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>";
+                  /*echo $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>";*/
+                  echo "<a href='index.php' class='box' style='display:block'> $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>" </a>";
                 }
               } else {
                 echo "0 results";
