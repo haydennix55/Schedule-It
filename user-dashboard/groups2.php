@@ -77,16 +77,8 @@ $first_name = $_SESSION['first'];
 				<h1 class="page-header">Members</h1>
 		        <?php
               include_once 'connectDB.php';
-              $query="SELECT username FROM users";
-              $results = mysql_query($query);
-
-              while ($row = mysql_fetch_array($results)) {
-                echo '<tr>';
-                foreach($row as $field) {
-                  echo '<td>' . htmlspecialchars($field) . '</td>';
-                }
-                echo '</tr>';
-              }
+              $query="SELECT * FROM users";
+              echo $query;
               echo "Test";
             ?>
 
