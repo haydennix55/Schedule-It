@@ -30,7 +30,7 @@ h3, h4 {
 	font-weight: 300;
 }
 #Iframe {
-	position: absolute;
+	position: static;
 	left: 10px;
 	top: 75px;
 	width: 500px;
