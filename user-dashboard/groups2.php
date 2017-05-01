@@ -70,10 +70,10 @@ $first_name = $_SESSION['first'];
 		</ul>
 	</div>
 
-	<!--<div id="Main" class="col-sm-9 col-sm col-lg-10 col-lg main">-->
-    <div class="container">
-			<!--<div class="col-lg-12">-->
-				<!---<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>-->
+	<div id="Main" class="col-sm-9 col-sm col-lg-10 col-lg main">
+    <div class="row">
+			<div class="col-lg-12">
+			  <span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
 				<h1 class="page-header">Members</h1>
 		        <?php
 
@@ -94,16 +94,16 @@ $first_name = $_SESSION['first'];
               if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                  echo " - Name: " . $row["first_name"]. " " . $row["last_name"]. " " . "Username: " . $row["username"]. "<br>";
+                  echo $row["first_name"]. " " . $row["last_name"]. " | " . "Username: " . $row["username"]. "<br>";
                 }
               } else {
                 echo "0 results";
               }
             ?>
 
-	    <!-- </div> -->
+	    </div>
     </div>
-  <!-- </div> -->
+   </div>
 
 
 	<script src="js/jquery-1.11.1.min.js"></script>
