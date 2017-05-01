@@ -76,6 +76,7 @@ $first_name = $_SESSION['first'];
 				<!---<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>-->
 				<h1 class="page-header">Members</h1>
 		        <?php
+              include_once 'connectDB.php';
               $query="SELECT username FROM users";
               $results = mysql_query($query);
 
