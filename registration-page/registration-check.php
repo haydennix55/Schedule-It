@@ -4,8 +4,6 @@
 	if(isset($_POST['submit'])){
 		include_once '../include/connectDB.php';
 
-
-
 		// Saves the input from the registration page to variables, it also parses out any strange characters to prevent injection
 		$first_name = mysqli_real_escape_string($conn, $_POST['first']);
 		$last_name = mysqli_real_escape_string($conn, $_POST['last']);
