@@ -100,11 +100,11 @@ function closeBar() {
 }
 
 function expandCalendar(){
-  document.getElementById("Iframe").style.width = "800";
+    document.getElementById("Iframe").style.width = "800";
 }
 
 function condenseCalendar(){
-  document.getElementById("Iframe").style.width = "500";
+    document.getElementById("Iframe").style.width = "500";
 }
 </script>
 
