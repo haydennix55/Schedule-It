@@ -8,7 +8,7 @@ date_default_timezone_set('America/Denver');
 include_once("dbconfig.php");
 include_once("functions.php");
 
-function addCalendar($st, $et, $sub, $ade){
+function addCalendar($st, $et, $sub, $ade, $uid){
   $ret = array();
   try{
     $db = new DBConnection();
@@ -36,7 +36,7 @@ function addCalendar($st, $et, $sub, $ade){
 }
 
 
-function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
+function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $uid){
   $ret = array();
   try{
     $db = new DBConnection();
@@ -213,7 +213,7 @@ header('Content-type:text/javascript;charset=UTF-8');
 $method = $_GET["method"];
 switch ($method) {
     case "add":
-        $ret = addCalendar($_POST["CalendarStartTime"], $_POST["CalendarEndTime"], $_POST["CalendarTitle"], $_POST["IsAllDayEvent"]);
+        $ret = addCalendar($_POST["CalendarStartTime"], $_POST["CalendarEndTime"], $_POST["CalendarTitle"], $_POST["IsAllDayEvent"], $uid);
         break;
     case "list":
         $ret = listCalendar($_POST["showdate"], $_POST["viewtype"]);
@@ -234,7 +234,7 @@ switch ($method) {
         }else{
             $ret = addDetailedCalendar($st, $et,
                 $_POST["Subject"], isset($_POST["IsAllDayEvent"])?1:0, $_POST["Description"],
-                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"]);
+                $_POST["Location"], $_POST["colorvalue"], $_POST["timezone"], $uid);
         }
         break;
 
