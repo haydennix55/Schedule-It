@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once("php/dbconfig.php");
 include_once("php/functions.php");
 function getCalendarByRange($id){
