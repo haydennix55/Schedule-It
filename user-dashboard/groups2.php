@@ -80,8 +80,8 @@ $first_name = $_SESSION['first'];
               while($run_mem = mysql_fetch_array($mem_query)){
                 $uID= $run_mem['uid'];
                 echo $uID;
-                echo "test";
               }
+              echo "Test";
             ?>
 
 	    <!-- </div> -->
