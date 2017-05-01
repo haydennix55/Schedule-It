@@ -70,7 +70,7 @@ $first_name = $_SESSION['first'];
 	</div>
 
 	<div id="Main" class="col-sm-9 col-sm col-lg-10 col-lg main">
-    <div class="row">
+    <div class="container">
 			<div class="col-lg-12">
 				<span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
 				<h1 class="page-header">Members</h1>
