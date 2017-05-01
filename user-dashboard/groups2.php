@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once '/php/functions.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
