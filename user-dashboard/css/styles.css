@@ -241,3 +241,14 @@ h1.page-header {
 
 .dropdown:hover .dropbtn {
 		background-color: #ffd700;
+}
+
+.container{
+		background: #ccc;
+		color: #333;
+		padding:10px;
+		border-radius:5px;
+		margin:10px 0px;
+		width:50%;
+		min-height:500px;
+}
