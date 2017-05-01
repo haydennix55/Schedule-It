@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once '/php/functions.php';
 include_once '/include/connectDB.php';
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
@@ -76,7 +77,7 @@ $first_name = $_SESSION['first'];
 		<?php
       $mem_query = mysql_query("SELECT uid FROM users");
       while($run_mem = mysql_fetch_array($mem_query)){
-        $user_id = $run_mem['uid']
+        $user_id = $run_mem['uid'];
         echo $user_id;
       }
      ?>

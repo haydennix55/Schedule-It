@@ -88,6 +88,13 @@ $username = $_SESSION['username'];
 
 		</div>
 	</div>
+	<?php
+		$mem_query = mysql_query("SELECT uid FROM users");
+		while($run_mem = mysql_fetch_array($mem_query)){
+			$user_id = $run_mem['uid'];
+			echo $user_id;
+		}
+	 ?>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>

@@ -51,7 +51,7 @@ $first_name = $_SESSION['first'];
 		<ul class="nav menu">
 			<li><a href="index.php"> Dashboard</a></li>
 			<li class="active"><a href="calender.php"> Calender</a></li>
-			<li><a href="groups2.php"> Groups</a></li>
+			<li><a href="groups.php"> Groups</a></li>
 			<div class="dropdown">
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
