@@ -32,9 +32,7 @@ h3, h4 {
 .dash-calander {
 	position: absolute;
 	left: 10px;
-	top: 75px;
-	resize: both;
-  overflow: auto;
+	top: 75px
 }
 .navbar-header .navbar-brand {
 	color: #fff;
@@ -192,7 +190,7 @@ h1.page-header {
 		background-color: #ffffff;
 		color: black;
 		padding: 7px;
-		width: 400%;
+		width: 450%;
 		text-align: left;
 		font-size: 14px;
 		text-indent: 8px;
