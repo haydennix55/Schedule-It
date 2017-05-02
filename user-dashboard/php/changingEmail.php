@@ -17,7 +17,11 @@
 
     //header("Location:../index.php");
 
-    echo "<p>" . $sql . "</p>";
-
 
  ?>
+
+<!DOCTYPE html>
+<html>
+    <?php echo "<p>" . $sql . "</p>";?>
+
+</html>
