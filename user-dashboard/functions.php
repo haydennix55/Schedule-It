@@ -1,5 +1,5 @@
 <?php
-include_once '/include/connectDB.php';
+include_once '../include/connectDB.php';
 function isLoggedIn(){
   if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
     return true;
