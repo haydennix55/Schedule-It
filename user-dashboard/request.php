@@ -89,14 +89,23 @@ $first_name = $_SESSION['first'];
 
     if(isset($_GET['user']) && !empty($_GET['user'])){
       $user = intval($_GET['user']);
-      $first = $_GET['fname'];
-      $last = $_GET['lname'];
     } else {
       $user = $_SESSION['uid'];
     }
 
     $my_id = $_SESSION['uid'];
 
+    if(isset($_GET['fname']) && !empty($_GET['fname'])){
+      $first = $_GET['fname'];
+    } else {
+      $first = $_SESSION['first_name'];
+    }
+
+    if(isset($_GET['lname']) && !empty($_GET['lname'])){
+      $last = $_GET['lname'];
+    } else {
+      $last = $_SESSION['last_name'];
+    }
     echo $user;
     echo $first;
     echo $last;
