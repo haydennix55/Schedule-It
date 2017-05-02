@@ -96,7 +96,13 @@ $first_name = $_SESSION['first'];
     $my_id = $_SESSION['uid'];
 
     if($user != $my_id){
-      echo "Request button";
+      $check_friend_query = mysql_query("SELECT id FROM friends WHERE (User1='$my_id AND User2='$user) OR (User1='$user' AND User2='$my_id')");
+      if(mysql_num_rows($check_friend_query) == 1){
+        echo "<a href='' class='box'>Already Friends</a>";
+
+      } else {
+        echo "Other options";
+      }
     }
 
   ?>
