@@ -93,7 +93,17 @@ $first_name = $_SESSION['first'];
     $receiver = "SELECT first_name, last_name FROM users WHERE uid=$user";
     $result = $conn->query($receiver);
 
-    echo $result;
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+        $fName = $row["first_name"];
+        $lName = $row["last_name"];
+
+        <h1><?php echo $fName $lName; ?></h1>
+      }
+    } else {
+      echo "0 results";
+    }
   ?>
 </body>
 
