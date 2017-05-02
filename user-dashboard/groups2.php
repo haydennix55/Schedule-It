@@ -97,11 +97,17 @@ $first_name = $_SESSION['first'];
                   $fName = $row["first_name"];
                   $lName = $row["last_name"];
                   $uName = $row["username"];
+
+                  $mem_query = mysql_query("SELECT uid FROM users");
+                  while($run_mem = mysql_fetch_array($mem_query)){
+                    $user_id = $run_mem['uid'];
                   /*echo $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>";*/
-                  echo "<a href='request.php' class='box' style='display:block'> $fName $lName | @$uName </a>";
+                  echo "<a href='request.php?user=$user_id' class='box' style='display:block'> $fName $lName | @$uName </a>";
                 }
               } else {
                 echo "0 results";
+              }
+
               }
             ?>
 
