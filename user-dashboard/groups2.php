@@ -88,7 +88,7 @@ $first_name = $_SESSION['first'];
                 echo "Connection did not work";
               }
 
-              $sql = "SELECT first_name, last_name, username FROM users ORDER BY first_name ASC";
+              $sql = "SELECT uid, first_name, last_name, username FROM users ORDER BY first_name ASC";
               $result = $conn->query($sql);
 
               if ($result->num_rows > 0) {
@@ -98,9 +98,7 @@ $first_name = $_SESSION['first'];
                   $lName = $row["last_name"];
                   $uName = $row["username"];
 
-                  $mem_query = mysql_query("SELECT uid FROM users");
-                  while($run_mem = mysql_fetch_array($mem_query)){
-                    $user_id = $run_mem['uid'];
+                  $user_id = $row["uid"];
                   /*echo $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>";*/
                   echo "<a href='request.php?user=$user_id' class='box' style='display:block'> $fName $lName | @$uName </a>";
                 }
