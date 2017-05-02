@@ -90,11 +90,15 @@ $first_name = $_SESSION['first'];
 
     $my_id = $_SESSION['uid'];
 
-    $result = mysql_query("SELECT first_name, last_name FROM users WHERE uid=$user");
-    $row = mysql_fetch_assoc($result);
-    echo $row['first_name']." ".$row['last_name'];
+    function getUser($id, $field1, $field2){
+      $query = mysql_query("SELECT $field1, $field2 FROM users WHERE username=$id");
+      $run = mysql_fetch_array($query);
+      return $run[$field1], $run[$field2];
+    }
+
+    $receiver = getUser($user, 'first_name', 'last_name');
   ?>
-<h1><?php echo $row['first_name']." ".$row['last_name']; ?> </h1>
+<h1><?php echo $receiver; ?> </h1>
 
 </body>
 
