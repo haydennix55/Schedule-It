@@ -67,7 +67,7 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $ui
   return $ret;
 }
 
-function listCalendarByRange($sd, $ed,$uid){
+function listCalendarByRange($sd, $ed, $uid){
   $ret = array();
   $ret['events'] = array();
   $ret["issort"] =true;
@@ -78,7 +78,7 @@ function listCalendarByRange($sd, $ed,$uid){
     $db = new DBConnection();
     $db->getConnection();
     $sql = "select * from `jqcalendar` where (`starttime` between '"
-      .php2MySqlTime($sd)."' and '". php2MySqlTime($ed)."' and `uid` = ".$uid." ORDER BY starttime ASC";
+      .php2MySqlTime($sd)."' and '". php2MySqlTime($ed)."' and `uid` = '" . 52 ."') ORDER BY starttime ASC";
     $handle = mysql_query($sql);
     //echo $sql;
     while ($row = mysql_fetch_object($handle)) {
@@ -109,7 +109,7 @@ function listCalendarByRange($sd, $ed,$uid){
   return $ret;
 }
 
-function listCalendar($day, $type){
+function listCalendar($day, $type, $uid){
   $phpTime = js2PhpTime($day);
   //echo $phpTime . "+" . $type;
   switch($type){
@@ -130,7 +130,7 @@ function listCalendar($day, $type){
       break;
   }
   //echo $st . "--" . $et;
-  return listCalendarByRange($st, $et);
+  return listCalendarByRange($st, $et, $uid);
 }
 
 function updateCalendar($id, $st, $et){
@@ -216,7 +216,7 @@ switch ($method) {
         $ret = addCalendar($_POST["CalendarStartTime"], $_POST["CalendarEndTime"], $_POST["CalendarTitle"], $_POST["IsAllDayEvent"], $uid);
         break;
     case "list":
-        $ret = listCalendar($_POST["showdate"], $_POST["viewtype"]);
+        $ret = listCalendar($_POST["showdate"], $_POST["viewtype"], $uid);
         break;
     case "update":
         $ret = updateCalendar($_POST["calendarId"], $_POST["CalendarStartTime"], $_POST["CalendarEndTime"]);
