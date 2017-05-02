@@ -95,20 +95,9 @@ $first_name = $_SESSION['first'];
 
     $my_id = $_SESSION['uid'];
 
-    if(isset($_GET['fname']) && !empty($_GET['fname'])){
-      $first = $_GET['fname'];
-    } else {
-      $first = $_SESSION['first_name'];
+    if($user != $my_id){
+      echo "Request button";
     }
-
-    if(isset($_GET['lname']) && !empty($_GET['lname'])){
-      $last = $_GET['lname'];
-    } else {
-      $last = $_SESSION['last_name'];
-    }
-    echo $user;
-    echo $first;
-    echo $last;
 
   ?>
     </div>
