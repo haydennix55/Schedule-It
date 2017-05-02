@@ -83,15 +83,15 @@ $first_name = $_SESSION['first'];
     }
 
     if(isset($_GET['user']) && !empty($_GET['user'])){
-      $user = $_GET['user'];
+      $user = intval($_GET['user']);
     } else {
       $user = $_SESSION['uid'];
     }
 
     $my_id = $_SESSION['uid'];
 
-    $result = mysqli_query("SELECT first_name, last_name FROM users WHERE uid=$user");
-    $row = mysqli_fetch_assoc($result);
+    $result = mysql_query("SELECT first_name, last_name FROM users WHERE uid=$user");
+    $row = mysql_fetch_assoc($result);
     echo $row['first_name']." ".$row['last_name'];
   ?>
 <h1><?php echo $row['first_name']." ".$row['last_name']; ?> </h1>
