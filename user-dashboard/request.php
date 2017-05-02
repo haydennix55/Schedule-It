@@ -98,13 +98,13 @@ $first_name = $_SESSION['first'];
       while($row = $result->fetch_assoc()) {
         $fName = $row["first_name"];
         $lName = $row["last_name"];
-
-        <h1><?php echo $fName $lName; ?></h1>
       }
     } else {
       echo "0 results";
     }
   ?>
+<h1><?php $fName $lName; ?> </h1>
+
 </body>
 
 </html>
