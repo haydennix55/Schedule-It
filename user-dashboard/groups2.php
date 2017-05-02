@@ -98,7 +98,7 @@ $first_name = $_SESSION['first'];
                   $lName = $row["last_name"];
                   $uName = $row["username"];
                   /*echo $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>";*/
-                  echo "<a href='index.php' class='box' style='display:block'> $fName $lName " | @" $uName </a>";
+                  echo "<a href='index.php' class='box' style='display:block'> $fName $lName <?php echo " | @" ?> $uName </a>";
                 }
               } else {
                 echo "0 results";
