@@ -70,7 +70,23 @@ $first_name = $_SESSION['first'];
 		</ul>
 	</div>
   <?php
-    include_once 'functions.php';
+    $server = "us-cdbr-iron-east-03.cleardb.net";
+    $username = "b93aa055892ff0";
+    $password = "a2da8580";
+    define('DBNAME', 'heroku_2dba9b3d9ee490e');
+
+    $conn = new mysqli($server, $username, $password, DBNAME);
+
+    if(mysqli_ping($conn) == false){
+      echo "Connection did not work";
+    }
+
+    function getUser($id, $field){
+      $query = mysql_query("SELECT $field FROM users WHERE username=$id");
+      $run = mysql_fetch_array($query);
+      return $run[$field];
+    }
+    
     if(isset($_GET['user']) && !empty($_GET['user'])){
       $user = $_GET['user'];
     } else {
