@@ -90,8 +90,10 @@ $first_name = $_SESSION['first'];
 
     $my_id = $_SESSION['uid'];
 
-    echo $user;
-    echo $my_id;
+    $receiver = "SELECT first_name, last_name FROM users WHERE uid=$user";
+    $result = $conn->query($receiver);
+
+    echo $result;
   ?>
 </body>
 
