@@ -79,11 +79,12 @@ $first_name = $_SESSION['first'];
 
 			</div>
 		</div>
+    <div id="Iframe" class="dash-calander">
+  		<iframe class="dash-calander" src="/calendarAPI/sample-dashboard.php"></iframe>
+  	</div>
 
 	</div>
-	<div id="Iframe" class="dash-calander">
-		<iframe class="dash-calander" src="/calendarAPI/sample-dashboard.php"></iframe>
-	</div>
+
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -100,11 +101,11 @@ function closeBar() {
 }
 
 function expandCalendar(){
-  document.getElementById("Iframe").style.width = "800";
+    document.getElementById("Iframe").style.width = "800";
 }
 
 function condenseCalendar(){
-  document.getElementById("Iframe").style.width = "500";
+    document.getElementById("Iframe").style.width = "500";
 }
 </script>
 
