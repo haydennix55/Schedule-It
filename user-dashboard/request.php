@@ -70,6 +70,7 @@ $first_name = $_SESSION['first'];
 		</ul>
 	</div>
   <?php
+    include_once 'functions.php';
     $server = "us-cdbr-iron-east-03.cleardb.net";
     $username = "b93aa055892ff0";
     $password = "a2da8580";
@@ -81,6 +82,15 @@ $first_name = $_SESSION['first'];
       echo "Connection did not work";
     }
 
+    if(isset($_GET['user']) && !empty($_GET['user'])){
+      $user = $_GET['user'];
+    } else {
+      $user = $_SESSION['user_id'];
+    }
+    $my_id = $_SESSION['user_id'];
+    $uName = getUser($user, 'username');
+
+    echo $uName;
   ?>
 </body>
 
