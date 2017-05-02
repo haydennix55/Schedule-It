@@ -90,20 +90,11 @@ $first_name = $_SESSION['first'];
 
     $my_id = $_SESSION['uid'];
 
-    $receiver = "SELECT first_name, last_name FROM users WHERE uid=$user";
-    $result = $conn->query($receiver);
-
-    if ($result->num_rows > 0) {
-      // output data of each row
-      while($row = $result->fetch_assoc()) {
-        $fName = $row["first_name"];
-        $lName = $row["last_name"];
-      }
-    } else {
-      echo "0 results";
-    }
+    $result = mysqli_query("SELECT first_name, last_name FROM users WHERE uid=$user");
+    $row = mysqli_fetch_assoc($result);
+    echo $row['first_name']." ".$row['last_name'];
   ?>
-<h1><?php $fName $lName; ?> </h1>
+<h1><?php echo $row['first_name']." ".$row['last_name']; ?> </h1>
 
 </body>
 
