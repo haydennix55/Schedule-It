@@ -90,15 +90,12 @@ $first_name = $_SESSION['first'];
 
     $my_id = $_SESSION['uid'];
 
-    function getUser($id, $field1, $field2){
-      $query = mysql_query("SELECT $field1, $field2 FROM users WHERE username=$id");
-      $run = mysql_fetch_array($query);
-      return $run[$field1], $run[$field2];
-    }
+    $query = "SELECT first_name, last_name FROM users WHERE uid=$user";
+    $result = mysql_query($query);
 
-    $receiver = getUser($user, 'first_name', 'last_name');
+    echo $result;
+
   ?>
-<h1><?php echo $receiver; ?> </h1>
 
 </body>
 
