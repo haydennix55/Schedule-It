@@ -17,7 +17,7 @@
 
     //header("Location:../index.php");
 
-    echo "<p>$sql</p>";
+    echo "<p>" . $sql . "</p>";
 
 
  ?>
