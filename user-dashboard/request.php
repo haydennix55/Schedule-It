@@ -85,10 +85,10 @@ $first_name = $_SESSION['first'];
     if(isset($_GET['user']) && !empty($_GET['user'])){
       $user = $_GET['user'];
     } else {
-      $user = $_SESSION['user_id'];
+      $user = $_SESSION['uid'];
     }
 
-    $my_id = $_SESSION['user_id'];
+    $my_id = $_SESSION['uid'];
 
     echo $user;
     echo $my_id;
