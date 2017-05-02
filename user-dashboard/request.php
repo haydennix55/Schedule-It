@@ -89,6 +89,8 @@ $first_name = $_SESSION['first'];
 
     if(isset($_GET['user']) && !empty($_GET['user'])){
       $user = intval($_GET['user']);
+      $first = $_GET['fname'];
+      $last = $_GET['lname'];
     } else {
       $user = $_SESSION['uid'];
     }
@@ -96,15 +98,26 @@ $first_name = $_SESSION['first'];
     $my_id = $_SESSION['uid'];
 
     echo $user;
-    $result = mysql_query("SELECT first_name, last_name FROM users WHERE uid='$user'");
-    $row = mysql_fetch_array($result);
-
-    echo $row['first_name']." ".$row['last_name'];
+    echo $first;
+    echo $last;
 
   ?>
     </div>
   </div>
 </div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+function openBar() {
+    document.getElementById("sidebar-collapse").style.width = "20%";
+    document.getElementById("sidebar-collapse").style.display = "block";
+}
+
+function closeBar() {
+    document.getElementById("sidebar-collapse").style.width = "0%";
+}
+</script>
 
 </body>
 

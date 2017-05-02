@@ -100,7 +100,7 @@ $first_name = $_SESSION['first'];
 
                   $usID = $row["uid"];
                   /*echo $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>";*/
-                  echo "<a href='request.php?user=$usID' class='box' style='display:block'> $fName $lName | @$uName </a>";
+                  echo "<a href='request.php?user=$usID?fname=$fName?lname=$lname' class='box' style='display:block'> $fName $lName | @$uName </a>";
                 }
               } else {
                 echo "0 results";
