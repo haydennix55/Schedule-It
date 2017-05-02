@@ -87,10 +87,8 @@ $first_name = $_SESSION['first'];
     } else {
       $user = $_SESSION['user_id'];
     }
-    $my_id = $_SESSION['user_id'];
-    $uName = getUser($user, 'username');
 
-    echo $uName;
+    echo $user;
   ?>
 </body>
 
