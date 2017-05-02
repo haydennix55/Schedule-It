@@ -22,6 +22,17 @@ button {
     width: 100%;
 }
 
+#submit {
+  background-color: #ffd700;
+  color: black;
+  font-size: 20px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
 .cancelbtn {
     width: auto;
     padding: 8px 18px;
