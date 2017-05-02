@@ -91,6 +91,10 @@ $first_name = $_SESSION['first'];
     $my_id = $_SESSION['uid'];
 
     echo $user;
+    $result = mysql_query("SELECT first_name, last_name FROM users WHERE uid='$user'");
+    $row = mysql_fetch_array($result);
+
+    echo $row['first_name']." ".$row['last_name'];
 
   ?>
 
