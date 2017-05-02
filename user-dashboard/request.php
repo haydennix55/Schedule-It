@@ -81,19 +81,6 @@ $first_name = $_SESSION['first'];
       echo "Connection did not work";
     }
 
-    function getUser($id, $field){
-      $query = mysql_query("SELECT $field FROM users WHERE username=$id");
-      $run = mysql_fetch_array($query);
-      return $run[$field];
-    }
-    
-    if(isset($_GET['user']) && !empty($_GET['user'])){
-      $user = $_GET['user'];
-    } else {
-      $user = $_SESSION['user_id'];
-    }
-      $uName = getUser($user, 'username');
-      echo $uName;
   ?>
 </body>
 
