@@ -34,8 +34,7 @@ $first_name = $_SESSION['first'];
 					<li class="dropdown pull-right">
 						<?php echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>' . $first_name .  '<span class="caret"></span></a>'; ?>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Profile</a></li>
-							<li><a href="#">Settings</a></li>
+							<li><a href="index.php">Dashboard</a></li>
 							<li><a href="php/logout.php">Logout</a></li>
 						</ul>
 					</li>
