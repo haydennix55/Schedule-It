@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-include_once '/php/functions.php';
+include_once 'functions.php';
 include_once 'connectDB.php';
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
@@ -69,59 +69,16 @@ $first_name = $_SESSION['first'];
 			<li role="presentation" class="divider"></li>
 		</ul>
 	</div>
-
-	<div id="Main" class="col-sm-9 col-sm col-lg-10 col-lg main">
-    <div class="row">
-			<div class="col-lg-12">
-			  <span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
-				<h1 class="page-header">Members</h1>
-		        <?php
-
-              $server = "us-cdbr-iron-east-03.cleardb.net";
-              $username = "b93aa055892ff0";
-              $password = "a2da8580";
-              define('DBNAME', 'heroku_2dba9b3d9ee490e');
-
-              $conn = new mysqli($server, $username, $password, DBNAME);
-
-              if(mysqli_ping($conn) == false){
-                echo "Connection did not work";
-              }
-
-              $sql = "SELECT first_name, last_name, username FROM users ORDER BY first_name ASC";
-              $result = $conn->query($sql);
-
-              if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-                  $fName = $row["first_name"];
-                  $lName = $row["last_name"];
-                  $uName = $row["username"];
-                  /*echo $row["first_name"]. " " . $row["last_name"]. " | " . "@" . $row["username"]. "<br>";*/
-                  echo "<a href='request.php' class='box' style='display:block'> $fName $lName | @$uName </a>";
-                }
-              } else {
-                echo "0 results";
-              }
-            ?>
-
-	    </div>
-    </div>
-   </div>
-
-
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script>
-	function openBar() {
-			document.getElementById("sidebar-collapse").style.width = "20%";
-			document.getElementById("sidebar-collapse").style.display = "block";
-	}
-
-	function closeBar() {
-	    document.getElementById("sidebar-collapse").style.width = "0%";
-	}
-</script>
+  <?php
+    include_once 'functions.php';
+    if(isset($_GET['user']) && !empty($_GET['user'])){
+      $user = $_GET['user'];
+    } else {
+      $user = $_SESSION['user_id'];
+    }
+      $uName = getUser($user, 'username');
+      echo $uName;
+  ?>
 </body>
 
 </html>
