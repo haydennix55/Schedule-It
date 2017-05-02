@@ -47,6 +47,7 @@
 	}
 
  ?>
+ 
  <!DOCTYPE html>
  <html>
  <link rel="stylesheet" type="text/css" href="registration-complete.css" media="screen" />
