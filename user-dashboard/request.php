@@ -69,6 +69,11 @@ $first_name = $_SESSION['first'];
 			<li role="presentation" class="divider"></li>
 		</ul>
 	</div>
+
+  <div id="Main" class="col-sm-9 col-sm col-lg-10 col-lg main">
+    <div class="row">
+			<div class="col-lg-12">
+			  <span style="font-size:20px;cursor:pointer" onclick="openBar()">&#9776; MENU</span>
   <?php
     include_once 'functions.php';
     $server = "us-cdbr-iron-east-03.cleardb.net";
@@ -97,6 +102,9 @@ $first_name = $_SESSION['first'];
     echo $row['first_name']." ".$row['last_name'];
 
   ?>
+    </div>
+  </div>
+</div>
 
 </body>
 
