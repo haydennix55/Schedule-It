@@ -90,7 +90,8 @@ $first_name = $_SESSION['first'];
 
     $my_id = $_SESSION['user_id'];
 
-    echo $user . " " . $my_id;
+    echo $user;
+    echo $my_id;
   ?>
 </body>
 
