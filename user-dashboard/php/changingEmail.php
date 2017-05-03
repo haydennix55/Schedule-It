@@ -9,7 +9,7 @@
         $newEmail = mysqli_real_escape_string($conn, $_POST['newEmail']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-        $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE email = '" . $currentEmail . "'";
+        $sql = "UPDATE users SET email = 'hani2284@colorado.edu' where email = 'hayden.nix@colorado.edu'";
 
         $query = mysqli_query($conn, $sql);
 
@@ -19,9 +19,3 @@
 
 
  ?>
-
-<!DOCTYPE html>
-<html>
-    <?php echo "<p>" . $sql . "</p>";?>
-
-</html>
