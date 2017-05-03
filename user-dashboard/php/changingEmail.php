@@ -7,7 +7,7 @@
     $newEmail = mysqli_real_escape_string($conn, $_POST['newEmail']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql = 'UPDATE users SET email = "' . $newEmail . '" WHERE email = "' . $currentEmail .'"';
+    $sql = 'UPDATE users SET email = "' . mysql_real_escape_string($newEmail) . '" WHERE email = "' . mysql_real_escape_string($currentEmail) .'"';
 
     echo $sql;
 
