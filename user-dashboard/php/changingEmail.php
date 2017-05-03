@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-    if(isset($_POST['submit'])) {
         $server = "us-cdbr-iron-east-03.cleardb.net";
     	$username = "b93aa055892ff0";
     	$password = "a2da8580";
@@ -16,9 +15,10 @@
 
         $sql = "UPDATE users SET email = 'hani2284@colorado.edu' WHERE email = 'hayden.nix@colorado.edu'";
 
+        echo $sql;
+
         $query = mysqli_query($conn, $sql);
 
-    }
 
     header("Location:../index.php");
 
