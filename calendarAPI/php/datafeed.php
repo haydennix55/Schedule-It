@@ -54,6 +54,7 @@ function addCalendar($st, $et, $sub, $ade, $uid){
 *@param string $loc Location of the new event
 *@param string $color Color to help organize visually
 *@return string $ret Success or Failure report message
+*@param string $uid Unique user-id for seperate events
 */
 
 function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $uid){
@@ -202,6 +203,7 @@ function updateCalendar($id, $st, $et){
 *@param string $dscr Description of the new event
 *@param string $loc Location of the new event
 *@return string $ret Success or Failure report message
+*@param string $color color value to organize events visually
 */
 
 function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
