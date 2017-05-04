@@ -8,6 +8,14 @@ date_default_timezone_set('America/Denver');
 include_once("dbconfig.php");
 include_once("functions.php");
 
+/**
+*@param dateTime $st Start time of the new event
+*@param dateTime $et End time of the new event
+*@param string $sub Subject of the new event
+*@param string $ade For all day events, makes start and end times irrelavant
+*@param string $uid Unique auto-increment id for all users
+*/
+
 function addCalendar($st, $et, $sub, $ade, $uid){
   $ret = array();
   try{
@@ -35,6 +43,15 @@ function addCalendar($st, $et, $sub, $ade, $uid){
   return $ret;
 }
 
+/**
+*@param dateTime $st Start time of the new event
+*@param dateTime $et End time of the new event
+*@param string $sub Subject of the new event
+*@param string $ade For all day events, makes start and end times irrelavant
+*@param string $uid Unique auto-increment id for all users
+*@param string $dscr Description of the new event
+*@param string $loc Location of the new event
+*/
 
 function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $uid){
   $ret = array();
@@ -78,7 +95,7 @@ function listCalendarByRange($sd, $ed, $uid){
     $db = new DBConnection();
     $db->getConnection();
     $sql = "select * from `jqcalendar` where (`starttime` between '"
-      .php2MySqlTime($sd)."' and '". php2MySqlTime($ed)."' and `uid` = '" . 52 ."') ORDER BY starttime ASC";
+      .php2MySqlTime($sd)."' and '". php2MySqlTime($ed)."' and `uid` = '" . $uid ."') ORDER BY starttime ASC";
     $handle = mysql_query($sql);
     //echo $sql;
     while ($row = mysql_fetch_object($handle)) {

@@ -101,7 +101,7 @@ $first_name = $_SESSION['first'];
         echo "<a href='' class='box'>Already Friends</a>";
 
       } else {
-        echo "Other options";
+        echo "<a href='' class='box'>Add Friend</a>";
       }
     }
 

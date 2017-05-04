@@ -10,20 +10,20 @@
 
 <!DOCTYPE html>
 <html>
-    <div>
-        <label>Current Email: </label>
-        <input class="currentEmail" type="text" placeholder="Current Email" id="currentEmail">
-    </div>
-    <div>
-        <label>New Email: </label>
-        <input class="newEmail" type="text" placeholder="New Email" id="newEmail">
-    </div>
-    <div>
-        <label>Password: </label>
-        <input class="currentPass" type="password" placeholder="Password" id="password">
-    </div>
-    <form action="php/changingEmail.php" >
-        <button type="submit">
-    </form>
+    <body>
+        <link rel="stylesheet" type="text/css" href="css/changeEmail.css"/>
+        <form method ="post" action="php/changingEmail.php">
+            <div class="inputs">
+
+                <label class="label">New Email: </label></br>
+                <input class="newEmail" type="text" placeholder="New Email" name="newEmail" id="newEmail"></br>
+
+                <label class="label">Password: </label></br>
+                <input class="currentPass" type="password" placeholder="Password" name="password" id="password"></br>
+
+                <button class="submitbutton" name="submit" value="submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </body>
 
 </html>
