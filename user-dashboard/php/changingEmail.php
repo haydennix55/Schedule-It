@@ -35,6 +35,12 @@
  ?>
 <html>
 <?php if ($changed) {echo '<script language="javascript">';
- echo 'alert("message successfully sent")';
-echo '</script>';} ?>
+ echo 'alert("Email Changed!")';
+echo '</script>';}
+else {echo '<script language="javascript">';
+ echo 'alert("Sorry, your password or current email are incorrect!")';
+echo '</script>';
+} ?>
 </html>
+
+<?php header("Location: ../index.php");
