@@ -29,7 +29,9 @@
         }
     }
 
-    header("Location:../index.php");
-
-
  ?>
+<html>
+<?php echo '<script language="javascript">'; ?>
+<?php echo 'alert("message successfully sent")'; ?>
+<?php echo '</script>'; ?>
+</html>
