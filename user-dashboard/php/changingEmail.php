@@ -24,7 +24,7 @@
 
             //echo "Password check";
 
-            $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE (username = '" . $username . "'";
+            $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE username = '" . $username . "'";
             $query = mysqli_query($conn, $sql);
         }
     }
