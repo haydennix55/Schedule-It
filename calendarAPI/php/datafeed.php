@@ -8,6 +8,10 @@ date_default_timezone_set('America/Denver');
 include_once("dbconfig.php");
 include_once("functions.php");
 
+/**
+*@param dateTime $st Start time of the new event
+*/
+
 function addCalendar($st, $et, $sub, $ade, $uid){
   $ret = array();
   try{
