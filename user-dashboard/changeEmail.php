@@ -23,7 +23,7 @@
                 <label class="label">Password: </label></br>
                 <input class="currentPass" type="password" placeholder="Password" name="password" id="password"></br>
 
-                <button class="submitbutton" name="submit" value="submit" type="submit">
+                <button class="submitbutton" name="submit" value="submit" type="submit">Submit</button>
             </div>
         </form>
     </body>
