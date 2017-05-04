@@ -35,9 +35,14 @@
  ?>
 <html>
 <?php if ($changed) {echo '<script language="javascript">';
- echo 'alert("Email Changed!")';
+ echo '
+    redirect = confirm("Do you want to redirect?");
+
+    if(redirect) {
+      window.location = "index.php";
+    }
+}';
 echo '</script>';
-header("Location: ../index.php");}
 if (!$changed) {echo '<script language="javascript">';
  echo 'alert("Sorry, your password or current email are incorrect!")';
 echo '</script>';
