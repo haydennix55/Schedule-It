@@ -1,23 +1,43 @@
 <?php
     session_start();
 
-    if(isset($_POST['submit'])) {
-        include_once '../include/connectDB.php';
+    include "../connectDB.php";
 
+    $newEmail = mysqli_real_escape_string($conn, $_POST['newEmail']);
+    $username = $_SESSION['username'];
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-        $currentEmail = mysqli_real_escape_string($conn, $_POST['currentEmail']);
-        $newEmail = mysqli_real_escape_string($conn, $_POST['newEmail']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $sql = "SELECT password FROM users WHERE username = '" . $username . "'";
 
-        $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE email = '" . $currentEmail . "'";
+    $query = mysqli_query($conn, $sql);
 
-        $query = mysqli_query($conn, $sql);
+    $changed = false;
 
+    //echo "Query";
+
+    while ($row = mysqli_fetch_assoc($query)){
+
+        //echo "ROW";
+
+        if(password_verify($password, $row['password'])){
+
+            //echo "Password check";
+
+            $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE username = '" . $username . "'";
+            $query = mysqli_query($conn, $sql);
+            $changed = true;
+        }
     }
 
-    header("Location:../index.php");
-
-
-
-
  ?>
+<html>
+<?php if ($changed) {echo '<script language="javascript">';
+ echo 'alert("Email Changed");';
+ echo 'window.location = "/user-dashboard/index.php";';
+echo '</script>';}
+if (!$changed) {echo '<script language="javascript">';
+ echo 'alert("Sorry, your password was incorrect!");';
+ echo 'window.location = "/user-dashboard/index.php";';
+echo '</script>';
+} ?>
+</html>
