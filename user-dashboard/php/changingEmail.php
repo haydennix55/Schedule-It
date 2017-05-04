@@ -3,7 +3,7 @@
 
     include "../connectDB.php";
 
-    echo "DB Connected";
+    //echo "DB Connected";
 
     $currentEmail = mysqli_real_escape_string($conn, $_POST['currentEmail']);
     $newEmail = mysqli_real_escape_string($conn, $_POST['newEmail']);
@@ -14,22 +14,22 @@
 
     $query = mysqli_query($conn, $sql);
 
-    echo "Query";
+    //echo "Query";
 
     while ($row = mysqli_fetch_assoc($query)){
 
-        echo "ROW";
+        //echo "ROW";
 
         if(password_verify($password, $row['password'])){
 
-            echo "Password check";
+            //echo "Password check";
 
-            $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE (email = '" . $currentEmail . "' and $username = '" . $username . "'";
+            $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE (username = '" . $username . "'";
             $query = mysqli_query($conn, $sql);
         }
     }
 
-    //header("Location:../index.php");
+    header("Location:../index.php");
 
 
  ?>
