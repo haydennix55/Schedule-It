@@ -33,7 +33,7 @@
 				$_SESSION['username'] = $username;
 				$_SESSION['uid'] = $row['uid'];
 
-				header("Location:registration-complete.php");
+				//header("Location:registration-complete.php");
 
 			}
 			else {
@@ -47,7 +47,7 @@
 	}
 
  ?>
- 
+
  <!DOCTYPE html>
  <html>
  <link rel="stylesheet" type="text/css" href="registration-complete.css" media="screen" />
