@@ -39,7 +39,7 @@
  echo 'if(redirect) {
       window.location = "index.php";
     }';
-echo '</script>';
+echo '</script>';}
 if (!$changed) {echo '<script language="javascript">';
  echo 'alert("Sorry, your password or current email are incorrect!")';
 echo '</script>';
