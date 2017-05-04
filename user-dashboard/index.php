@@ -59,7 +59,7 @@ $first_name = $_SESSION['first'];
 			    <button class="dropbtn">Settings</button>
 			    <div class="dropdown-content">
 			      <a href="php/logout.php">Sign Out</a>
-			      <a href="#">Change Email</a>
+			      <a href="changeEmail.php">Change Email</a>
 			      <a href="#">Change Password</a>
 			    </div>
 			  </div>
