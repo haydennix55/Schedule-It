@@ -18,6 +18,8 @@
 
     while ($row = mysqli_fetch_assoc($query)){
 
+        echo "ROW";
+
         if($username == $row['username'] and password_verify($password, $row['password'])){
 
             echo "Password check";
