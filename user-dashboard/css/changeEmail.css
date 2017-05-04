@@ -5,3 +5,8 @@ body {
 .inputs {
     width: 500px;
 }
+
+.label {
+    color: gold;
+    font-size: 24;
+}
