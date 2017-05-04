@@ -17,3 +17,8 @@ input {
     width: 500px;
     height: 20px;
 }
+
+button {
+    width: 30px;
+    height: 20px;
+}
