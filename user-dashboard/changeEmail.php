@@ -14,8 +14,8 @@
         <link rel="stylesheet" type="text/css" href="css/changeEmail.css"/>
         <form method ="post" action="php/changingEmail.php">
             <div class="inputs">
-                <label class="label">Current Email: </label></br>
-                <input class="currentEmail" type="text" placeholder="Current Email" name="currentEmail" id="currentEmail"></br>
+                <!-- <label class="label">Current Email: </label></br>
+                <input class="currentEmail" type="text" placeholder="Current Email" name="currentEmail" id="currentEmail"></br> -->
 
                 <label class="label">New Email: </label></br>
                 <input class="newEmail" type="text" placeholder="New Email" name="newEmail" id="newEmail"></br>
