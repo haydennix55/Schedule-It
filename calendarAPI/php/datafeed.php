@@ -13,7 +13,8 @@ include_once("functions.php");
 *@param dateTime $et End time of the new event
 *@param string $sub Subject of the new event
 *@param string $ade For all day events, makes start and end times irrelavant
-*@param string $uid Unique auto-increment id for all users
+*@param string $uid Unique auto-increment id for all users to save independent events
+*@return string $ret Success or Failure report message
 */
 
 function addCalendar($st, $et, $sub, $ade, $uid){
@@ -48,9 +49,11 @@ function addCalendar($st, $et, $sub, $ade, $uid){
 *@param dateTime $et End time of the new event
 *@param string $sub Subject of the new event
 *@param string $ade For all day events, makes start and end times irrelavant
-*@param string $uid Unique auto-increment id for all users
+*@param string $uid Unique auto-increment id for all users to save independent events
 *@param string $dscr Description of the new event
 *@param string $loc Location of the new event
+*@param string $color Color to help organize visually
+*@return string $ret Success or Failure report message
 */
 
 function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $uid){
@@ -83,7 +86,12 @@ function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $ui
   }
   return $ret;
 }
-
+/**
+*@param dateTime $sd Start date of the new event for loading purposes
+*@param dateTime $ed End date of the new event for loading purposes
+*@param string $uid User ID for all unique users to load inpependent events
+*@return array $ret Info about all events in given range for user
+*/
 function listCalendarByRange($sd, $ed, $uid){
   $ret = array();
   $ret['events'] = array();
@@ -126,6 +134,12 @@ function listCalendarByRange($sd, $ed, $uid){
   return $ret;
 }
 
+/**
+*@param dateTime $day Day parameter to find the date, the week, or month on display
+*@param string $type Either month, week, or day to set the calendar view
+*@param string $uid Unique user id to load only users events
+*/
+
 function listCalendar($day, $type, $uid){
   $phpTime = js2PhpTime($day);
   //echo $phpTime . "+" . $type;
@@ -149,7 +163,12 @@ function listCalendar($day, $type, $uid){
   //echo $st . "--" . $et;
   return listCalendarByRange($st, $et, $uid);
 }
-
+/**
+*@param dateTime $st Start time of the new event
+*@param dateTime $et End time of the new event
+*@param int $id The unique id for each calendar event to find quickly
+*@return string $ret Success or Failure report message
+*/
 function updateCalendar($id, $st, $et){
   $ret = array();
   try{
@@ -173,6 +192,17 @@ function updateCalendar($id, $st, $et){
   }
   return $ret;
 }
+
+/**
+*@param dateTime $st Start time of the new event
+*@param dateTime $et End time of the new event
+*@param string $sub Subject of the new event
+*@param string $ade For all day events, makes start and end times irrelavant
+*@param string $uid Unique auto-increment id for all users
+*@param string $dscr Description of the new event
+*@param string $loc Location of the new event
+*@return string $ret Success or Failure report message
+*/
 
 function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, $tz){
   $ret = array();
@@ -203,6 +233,10 @@ function updateDetailedCalendar($id, $st, $et, $sub, $ade, $dscr, $loc, $color, 
   return $ret;
 }
 
+/**
+*@param int $id Unique event id for quickly finding event
+*@return string $ret Success or Failure report message
+*/
 function removeCalendar($id){
   $ret = array();
   try{
