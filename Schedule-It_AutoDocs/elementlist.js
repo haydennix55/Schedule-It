@@ -1,0 +1,3 @@
+
+var ApiGen = ApiGen || {};
+ApiGen.elements = [["f","addCalendar()"],["f","addDetailedCalendar()"],["c","Composer\\Autoload\\ClassLoader"],["c","Composer\\Autoload\\ComposerStaticInit704b4f97d1a3d20de448827207cc32fe"],["c","ComposerAutoloaderInit704b4f97d1a3d20de448827207cc32fe"],["c","DBConnection"],["f","getCalendarByRange()"],["f","getUser()"],["c","Google_Service_Compute_HttpHealthCheck"],["c","Google_Service_Compute_HttpsHealthCheck"],["f","includeFile()"],["f","isLoggedIn()"],["f","js2PhpTime()"],["f","listCalendar()"],["f","listCalendarByRange()"],["f","mySql2PhpTime()"],["f","passCheck()"],["f","php2JsTime()"],["f","php2MySqlTime()"],["f","regUser()"],["f","removeCalendar()"],["f","updateCalendar()"],["f","updateDetailedCalendar()"]];
