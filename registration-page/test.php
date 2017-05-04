@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
 			$_SESSION['username'] = $username;
 			$_SESSION['uid'] = $row['uid'];
 
-			header("Location:registration-complete.php");
+			//header("Location:registration-complete.php");
 
 		}
 		else {
