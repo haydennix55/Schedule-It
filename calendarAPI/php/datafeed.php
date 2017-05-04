@@ -10,6 +10,10 @@ include_once("functions.php");
 
 /**
 *@param dateTime $st Start time of the new event
+*@param dateTime $et End time of the new event
+*@param string $sub Subject of the new event
+*@param string $ade For all day events, makes start and end times irrelavant
+*@param string $uid Unique auto-increment id for all users
 */
 
 function addCalendar($st, $et, $sub, $ade, $uid){
@@ -39,6 +43,15 @@ function addCalendar($st, $et, $sub, $ade, $uid){
   return $ret;
 }
 
+/**
+*@param dateTime $st Start time of the new event
+*@param dateTime $et End time of the new event
+*@param string $sub Subject of the new event
+*@param string $ade For all day events, makes start and end times irrelavant
+*@param string $uid Unique auto-increment id for all users
+*@param string $dscr Description of the new event
+*@param string $loc Location of the new event
+*/
 
 function addDetailedCalendar($st, $et, $sub, $ade, $dscr, $loc, $color, $tz, $uid){
   $ret = array();
