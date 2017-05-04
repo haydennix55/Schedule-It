@@ -15,7 +15,7 @@
 
     $row = mysqli_fetch_assoc($query);
 
-    if password_verify($password, $row['password']){
+    if (password_verify($password, $row['password'])){
 
         $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE (email = '" . $currentEmail . "' and username = '" . $username . "'";
         $query = mysqli_query($conn, $sql);
