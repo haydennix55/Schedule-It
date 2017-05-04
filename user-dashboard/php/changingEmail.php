@@ -19,6 +19,7 @@
 
         $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE (email = '" . $currentEmail . "' and username = '" . $username . "'";
         $query = mysqli_query($conn, $sql);
+    }
 
     header("Location:../index.php");
 
