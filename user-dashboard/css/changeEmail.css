@@ -4,9 +4,16 @@ body {
 
 .inputs {
     width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .label {
     color: gold;
     font-size: 24;
+}
+
+input {
+    width: 500px;
+    height: 20px;
 }
