@@ -33,6 +33,7 @@
 				$_SESSION['username'] = $username;
 				$_SESSION['uid'] = $row['uid'];
 
+				//header("Location:registration-complete.php");
 
 			}
 			else {
@@ -49,7 +50,7 @@
 
  <!DOCTYPE html>
  <html>
- <!-- <link rel="stylesheet" type="text/css" href="registration-complete.css" media="screen" /> -->
+ <link rel="stylesheet" type="text/css" href="registration-complete.css" media="screen" />
     <body>
         <div>
             <h1 class="message">Thanks for Registering!</h1>
