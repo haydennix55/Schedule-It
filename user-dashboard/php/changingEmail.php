@@ -20,7 +20,7 @@
 
         echo "ROW";
 
-        if($username == $row['username'] and password_verify($password, $row['password'])){
+        if(password_verify($password, $row['password'])){
 
             echo "Password check";
 
