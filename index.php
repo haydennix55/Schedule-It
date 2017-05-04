@@ -30,7 +30,7 @@
 		<div id="nav">
 			<ul>
 				<li><a href="login-page/index.php">Sign In</a></li>
-				<li><a href="registration-page/registration-page.php">Sign Up</a></li>
+				<li><a href="registration-page/test_reg.php">Sign Up</a></li>
 				<li><a href="#/contact.html">Contact</a></li>
 			</ul>
 		</div>
