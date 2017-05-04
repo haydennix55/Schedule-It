@@ -14,6 +14,8 @@
 
     $query = mysqli_query($conn, $sql);
 
+    $changed = false;
+
     //echo "Query";
 
     while ($row = mysqli_fetch_assoc($query)){
@@ -26,12 +28,13 @@
 
             $sql = "UPDATE users SET email = '" . $newEmail . "' WHERE username = '" . $username . "'";
             $query = mysqli_query($conn, $sql);
+            $changed = true;
         }
     }
 
  ?>
 <html>
-<?php echo '<script language="javascript">'; ?>
-<?php echo 'alert("message successfully sent")'; ?>
-<?php echo '</script>'; ?>
+<?php if ($changed) {echo '<script language="javascript">';
+ echo 'alert("message successfully sent")';
+echo '</script>';} ?>
 </html>
