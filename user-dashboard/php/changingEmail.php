@@ -36,7 +36,7 @@
  echo 'window.location = "/user-dashboard/index.php";';
 echo '</script>';}
 if (!$changed) {echo '<script language="javascript">';
- echo 'alert("Sorry, your password was incorrect!")';
+ echo 'alert("Sorry, your password was incorrect!");';
  echo 'window.location = "/user-dashboard/index.php";';
 echo '</script>';
 } ?>
