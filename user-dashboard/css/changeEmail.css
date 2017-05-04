@@ -20,5 +20,6 @@ input {
 
 button {
     width: 150px;
-    height: 75px;
+    height: 35px;
+    color: gold;
 }
