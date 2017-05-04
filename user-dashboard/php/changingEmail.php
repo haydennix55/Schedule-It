@@ -35,10 +35,8 @@
  ?>
 <html>
 <?php if ($changed) {echo '<script language="javascript">';
- echo 'redirect = confirm("Do you want to redirect?");';
- echo 'if(redirect) {
-      window.location = "index.php";
-    }';
+ echo 'alert("Email Changed");';
+ echo 'window.location = "/user-dashboard/index.php";';
 echo '</script>';}
 if (!$changed) {echo '<script language="javascript">';
  echo 'alert("Sorry, your password or current email are incorrect!")';
