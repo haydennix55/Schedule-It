@@ -3,9 +3,6 @@
 
     include "../connectDB.php";
 
-    //echo "DB Connected";
-
-    $currentEmail = mysqli_real_escape_string($conn, $_POST['currentEmail']);
     $newEmail = mysqli_real_escape_string($conn, $_POST['newEmail']);
     $username = $_SESSION['username'];
     $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -39,8 +36,8 @@
  echo 'window.location = "/user-dashboard/index.php";';
 echo '</script>';}
 if (!$changed) {echo '<script language="javascript">';
- echo 'alert("Sorry, your password or current email are incorrect!")';
+ echo 'alert("Sorry, your password was incorrect!")';
+ echo 'window.location = "/user-dashboard/index.php";';
 echo '</script>';
-//header("Location: ../index.php");
 } ?>
 </html>
